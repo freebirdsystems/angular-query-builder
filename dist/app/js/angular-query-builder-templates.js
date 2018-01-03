@@ -1,6 +1,6 @@
 angular.module('templates-aqb', ['directives/search-condition.tpl.html', 'directives/search-group.tpl.html']);
 
-angular.module("directives/search-condition.tpl.html", []).run(["$templateCache", function($templateCache) {
+angular.module("directives/search-condition.tpl.html", []).run(["$templateCache", function ($templateCache) {
   $templateCache.put("directives/search-condition.tpl.html",
     "<form class=\"form-inline aqb-search-condition\" name=\"searchConditionForm\">\n" +
     "    <select name=\"sourceField\"\n" +
@@ -27,13 +27,13 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "</form>");
 }]);
 
-angular.module("directives/search-group.tpl.html", []).run(["$templateCache", function($templateCache) {
+angular.module("directives/search-group.tpl.html", []).run(["$templateCache", function ($templateCache) {
   $templateCache.put("directives/search-group.tpl.html",
     "<div class=\"aqb-search-group\">\n" +
     "    <div class=\"aqb-search-group-head\">\n" +
     "        <div ng-show=\"sourceTypes.length > 1\">\n" +
     "            <div class=\"aqb-nav-pills-container\">\n" +
-    "                <ul class=\"nav nav-pills\">\n" +
+    "                <ul class=\"nav nav-pills nav-sm\">\n" +
     "                    <li ng-repeat=\"type in sourceTypes | orderBy:'position'\" ng-class=\"type.name == selectedSourceType.name ? 'active' : ''\">\n" +
     "                        <a href=\"javascript:void(0)\" ng-click=\"selectSourceType(type)\">{{type.displayName}}</a>\n" +
     "                    </li>\n" +
@@ -43,7 +43,7 @@ angular.module("directives/search-group.tpl.html", []).run(["$templateCache", fu
     "        </div>\n" +
     "        <div>\n" +
     "            <div class=\"aqb-nav-pills-container\">\n" +
-    "                <ul class=\"nav nav-pills\">\n" +
+    "                <ul class=\"nav nav-pills nav-sm\">\n" +
     "                    <li ng-repeat=\"operator in logicalOperators | orderBy:'position'\" ng-class=\"operator.name == selectedLogicalOperator.name ? 'active' : ''\">\n" +
     "                        <a href=\"javascript:void(0)\" ng-click=\"selectLogicalOperator(operator)\">{{operator.displayName}}</a>\n" +
     "                    </li>\n" +
