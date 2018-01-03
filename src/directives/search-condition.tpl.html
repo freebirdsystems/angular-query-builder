@@ -6,7 +6,7 @@
             ng-change="selectSourceField()"
             ng-model="selectedSourceField"
             ng-class="searchConditionForm.$submitted && searchConditionForm.sourceField.$error.required ? 'aqb-input-error' : ''"
-            ng-options="f.displayName for f in sourceType.sourceFields | orderBy:'position'" required></select>
+            ng-options="f.label for f in sourceType.sourceFields | orderBy:'position'" required></select>
     </div>
 
     <div class="form-group">
@@ -16,7 +16,7 @@
               ng-change="selectComparisonOperator()"
               ng-model="selectedComparisonOperator"
               ng-class="searchConditionForm.$submitted && searchConditionForm.comparisonOperator.$error.required ? 'aqb-input-error' : ''"
-              ng-options="o.displayName for o in selectedSourceField.comparisonOperators | orderBy:'position'" required></select>
+              ng-options="o in selectedSourceField.comparisonOperators | orderBy:'position'" required></select>
     </div>
 
     <div class="form-group">
