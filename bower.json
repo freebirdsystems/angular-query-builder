@@ -1,0 +1,24 @@
+{
+  "name": "angular-query-builder",
+  "version":"1.0.0",
+  "description": "Angular Query Builder",
+  "main": [
+    "dist/app/js/angular-query-builder-templates.js",
+    "dist/app/js/angular-query-builder.js",
+    "dist/app/main.css"
+  ],
+  "authors": [
+    "Mahmut Duva"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Auth Service"
+  ],
+  "dependencies": {
+  },
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "bower_components"
+  ]
+}
