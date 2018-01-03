@@ -19,9 +19,10 @@
               ng-options="o for o in selectedSourceField.comparisonOperators | orderBy:'position'" required></select>
     </div>
 
-    <div class="form-group">
+    <!-- Type: Text -->
+    <div class="form-group" ng-if="selectedSourceField.type == 'text'">
       <input name="inputItem"
-              placeholder="Değer Giriniz"
+             placeholder="Değer Giriniz"
              class="form-control"
              type="text"
              id="{{searchConditionInputItemId}}"
@@ -29,6 +30,21 @@
              ng-class="searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''" 
              autocomplete="off" required>
     </div>
+    <!-- /Type: Text -->
+
+    <!-- Type: Select -->
+    <div class="form-group" ng-if="selectedSourceField.type == 'select'">
+
+      <select name="comparisonOperator"
+            placeholder="Seçiniz"
+            class="form-control"
+            id="{{searchConditionInputItemId}}"
+            ng-model="inputItem.displayName"
+            ng-class="searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''" 
+            ng-options="o.key as o.value for o in selectedSourceField.options" required></select>
+
+    </div>
+    <!-- /Type: Select -->
 
     <button class="btn btn-sm" type="submit" ng-click="addCondition(searchConditionForm)" ng-show="canAddCondition(conditionIndex)">
       <i class="mdi-content-add-circle i-16"></i>

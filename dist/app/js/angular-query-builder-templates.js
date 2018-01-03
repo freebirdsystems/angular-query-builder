@@ -23,9 +23,10 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "              ng-options=\"o for o in selectedSourceField.comparisonOperators | orderBy:'position'\" required></select>\n" +
     "    </div>\n" +
     "\n" +
-    "    <div class=\"form-group\">\n" +
+    "    <!-- Type: Text -->\n" +
+    "    <div class=\"form-group\" ng-if=\"selectedSourceField.type == 'text'\">\n" +
     "      <input name=\"inputItem\"\n" +
-    "              placeholder=\"Değer Giriniz\"\n" +
+    "             placeholder=\"Değer Giriniz\"\n" +
     "             class=\"form-control\"\n" +
     "             type=\"text\"\n" +
     "             id=\"{{searchConditionInputItemId}}\"\n" +
@@ -33,6 +34,21 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "             ng-class=\"searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''\" \n" +
     "             autocomplete=\"off\" required>\n" +
     "    </div>\n" +
+    "    <!-- /Type: Text -->\n" +
+    "\n" +
+    "    <!-- Type: Select -->\n" +
+    "    <div class=\"form-group\" ng-if=\"selectedSourceField.type == 'select'\">\n" +
+    "\n" +
+    "      <select name=\"comparisonOperator\"\n" +
+    "            placeholder=\"Seçiniz\"\n" +
+    "            class=\"form-control\"\n" +
+    "            id=\"{{searchConditionInputItemId}}\"\n" +
+    "            ng-model=\"inputItem.displayName\"\n" +
+    "            ng-class=\"searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''\" \n" +
+    "            ng-options=\"o.key as o.value for o in selectedSourceField.options\" required></select>\n" +
+    "\n" +
+    "    </div>\n" +
+    "    <!-- /Type: Select -->\n" +
     "\n" +
     "    <button class=\"btn btn-sm\" type=\"submit\" ng-click=\"addCondition(searchConditionForm)\" ng-show=\"canAddCondition(conditionIndex)\">\n" +
     "      <i class=\"mdi-content-add-circle i-16\"></i>\n" +
