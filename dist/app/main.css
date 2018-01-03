@@ -111,5 +111,9 @@
     background-color: #337ab7!important;
 }
 
+.aqb-search-group .form-inline select {
+    min-width: 151px;
+}
+
 
 
