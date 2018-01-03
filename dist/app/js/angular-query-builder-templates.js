@@ -5,6 +5,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "<form class=\"form-inline aqb-search-condition\" name=\"searchConditionForm\">\n" +
     "    <div class=\"form-group\">\n" +
     "      <select name=\"sourceField\"\n" +
+    "            placeholder=\"Alan Seçiniz\"\n" +
     "            class=\"form-control\"\n" +
     "            ng-change=\"selectSourceField()\"\n" +
     "            ng-model=\"selectedSourceField\"\n" +
@@ -14,6 +15,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "\n" +
     "    <div class=\"form-group\">\n" +
     "      <select name=\"comparisonOperator\"\n" +
+    "              placeholder=\"Operatör Seçiniz\"\n" +
     "              class=\"form-control\"\n" +
     "              ng-change=\"selectComparisonOperator()\"\n" +
     "              ng-model=\"selectedComparisonOperator\"\n" +
@@ -23,6 +25,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "\n" +
     "    <div class=\"form-group\">\n" +
     "      <input name=\"inputItem\"\n" +
+    "              placeholder=\"Değer Giriniz\"\n" +
     "             class=\"form-control\"\n" +
     "             type=\"text\"\n" +
     "             id=\"{{searchConditionInputItemId}}\"\n" +

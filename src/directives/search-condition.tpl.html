@@ -1,6 +1,7 @@
 ﻿<form class="form-inline aqb-search-condition" name="searchConditionForm">
     <div class="form-group">
       <select name="sourceField"
+            placeholder="Alan Seçiniz"
             class="form-control"
             ng-change="selectSourceField()"
             ng-model="selectedSourceField"
@@ -10,6 +11,7 @@
 
     <div class="form-group">
       <select name="comparisonOperator"
+              placeholder="Operatör Seçiniz"
               class="form-control"
               ng-change="selectComparisonOperator()"
               ng-model="selectedComparisonOperator"
@@ -19,6 +21,7 @@
 
     <div class="form-group">
       <input name="inputItem"
+              placeholder="Değer Giriniz"
              class="form-control"
              type="text"
              id="{{searchConditionInputItemId}}"
