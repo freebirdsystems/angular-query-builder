@@ -3,27 +3,40 @@ angular.module('templates-aqb', ['directives/search-condition.tpl.html', 'direct
 angular.module("directives/search-condition.tpl.html", []).run(["$templateCache", function ($templateCache) {
   $templateCache.put("directives/search-condition.tpl.html",
     "<form class=\"form-inline aqb-search-condition\" name=\"searchConditionForm\">\n" +
-    "    <select name=\"sourceField\"\n" +
+    "    <div class=\"form-group\">\n" +
+    "      <select name=\"sourceField\"\n" +
+    "            class=\"form-control\"\n" +
     "            ng-change=\"selectSourceField()\"\n" +
     "            ng-model=\"selectedSourceField\"\n" +
     "            ng-class=\"searchConditionForm.$submitted && searchConditionForm.sourceField.$error.required ? 'aqb-input-error' : ''\"\n" +
     "            ng-options=\"f.displayName for f in sourceType.sourceFields | orderBy:'position'\" required></select>\n" +
+    "    </div>\n" +
     "\n" +
-    "    <select name=\"comparisonOperator\"\n" +
-    "            ng-change=\"selectComparisonOperator()\"\n" +
-    "            ng-model=\"selectedComparisonOperator\"\n" +
-    "            ng-class=\"searchConditionForm.$submitted && searchConditionForm.comparisonOperator.$error.required ? 'aqb-input-error' : ''\"\n" +
-    "            ng-options=\"o.displayName for o in selectedSourceField.comparisonOperators | orderBy:'position'\" required></select>\n" +
+    "    <div class=\"form-group\">\n" +
+    "      <select name=\"comparisonOperator\"\n" +
+    "              class=\"form-control\"\n" +
+    "              ng-change=\"selectComparisonOperator()\"\n" +
+    "              ng-model=\"selectedComparisonOperator\"\n" +
+    "              ng-class=\"searchConditionForm.$submitted && searchConditionForm.comparisonOperator.$error.required ? 'aqb-input-error' : ''\"\n" +
+    "              ng-options=\"o.displayName for o in selectedSourceField.comparisonOperators | orderBy:'position'\" required></select>\n" +
+    "    </div>\n" +
     "\n" +
-    "    <input name=\"inputItem\"\n" +
-    "           type=\"text\"\n" +
-    "           id=\"{{searchConditionInputItemId}}\"\n" +
-    "           ng-model=\"inputItem.displayName\"\n" +
-    "           ng-class=\"searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''\" \n" +
-    "           autocomplete=\"off\" required>\n" +
+    "    <div class=\"form-group\">\n" +
+    "      <input name=\"inputItem\"\n" +
+    "             class=\"form-control\"\n" +
+    "             type=\"text\"\n" +
+    "             id=\"{{searchConditionInputItemId}}\"\n" +
+    "             ng-model=\"inputItem.displayName\"\n" +
+    "             ng-class=\"searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''\" \n" +
+    "             autocomplete=\"off\" required>\n" +
+    "    </div>\n" +
     "\n" +
-    "    <button class=\"btn\" type=\"submit\" ng-click=\"addCondition(searchConditionForm)\" ng-show=\"canAddCondition(conditionIndex)\"><i class=\"icon-plus-sign\"></i></button>\n" +
-    "    <button class=\"btn\" type=\"button\" ng-click=\"removeCondition(conditionIndex)\"><i class=\"icon-minus-sign\"></i></button>\n" +
+    "    <button class=\"btn btn-sm\" type=\"submit\" ng-click=\"addCondition(searchConditionForm)\" ng-show=\"canAddCondition(conditionIndex)\">\n" +
+    "      <i class=\"mdi-content-add-circle i-16\"></i>\n" +
+    "    </button>\n" +
+    "    <button class=\"btn btn-sm\" type=\"button\" ng-click=\"removeCondition(conditionIndex)\">\n" +
+    "      <i class=\"mdi-content-remove-circle i-16\"></i>\n" +
+    "    </button>\n" +
     "</form>");
 }]);
 

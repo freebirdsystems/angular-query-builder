@@ -1,23 +1,36 @@
 ﻿<form class="form-inline aqb-search-condition" name="searchConditionForm">
-    <select name="sourceField"
+    <div class="form-group">
+      <select name="sourceField"
+            class="form-control"
             ng-change="selectSourceField()"
             ng-model="selectedSourceField"
             ng-class="searchConditionForm.$submitted && searchConditionForm.sourceField.$error.required ? 'aqb-input-error' : ''"
             ng-options="f.displayName for f in sourceType.sourceFields | orderBy:'position'" required></select>
+    </div>
 
-    <select name="comparisonOperator"
-            ng-change="selectComparisonOperator()"
-            ng-model="selectedComparisonOperator"
-            ng-class="searchConditionForm.$submitted && searchConditionForm.comparisonOperator.$error.required ? 'aqb-input-error' : ''"
-            ng-options="o.displayName for o in selectedSourceField.comparisonOperators | orderBy:'position'" required></select>
+    <div class="form-group">
+      <select name="comparisonOperator"
+              class="form-control"
+              ng-change="selectComparisonOperator()"
+              ng-model="selectedComparisonOperator"
+              ng-class="searchConditionForm.$submitted && searchConditionForm.comparisonOperator.$error.required ? 'aqb-input-error' : ''"
+              ng-options="o.displayName for o in selectedSourceField.comparisonOperators | orderBy:'position'" required></select>
+    </div>
 
-    <input name="inputItem"
-           type="text"
-           id="{{searchConditionInputItemId}}"
-           ng-model="inputItem.displayName"
-           ng-class="searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''" 
-           autocomplete="off" required>
+    <div class="form-group">
+      <input name="inputItem"
+             class="form-control"
+             type="text"
+             id="{{searchConditionInputItemId}}"
+             ng-model="inputItem.displayName"
+             ng-class="searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''" 
+             autocomplete="off" required>
+    </div>
 
-    <button class="btn" type="submit" ng-click="addCondition(searchConditionForm)" ng-show="canAddCondition(conditionIndex)"><i class="icon-plus-sign"></i></button>
-    <button class="btn" type="button" ng-click="removeCondition(conditionIndex)"><i class="icon-minus-sign"></i></button>
+    <button class="btn btn-sm" type="submit" ng-click="addCondition(searchConditionForm)" ng-show="canAddCondition(conditionIndex)">
+      <i class="mdi-content-add-circle i-16"></i>
+    </button>
+    <button class="btn btn-sm" type="button" ng-click="removeCondition(conditionIndex)">
+      <i class="mdi-content-remove-circle i-16"></i>
+    </button>
 </form>
