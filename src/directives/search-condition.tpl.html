@@ -16,7 +16,7 @@
               ng-change="selectComparisonOperator()"
               ng-model="selectedComparisonOperator"
               ng-class="searchConditionForm.$submitted && searchConditionForm.comparisonOperator.$error.required ? 'aqb-input-error' : ''"
-              ng-options="o in selectedSourceField.comparisonOperators | orderBy:'position'" required></select>
+              ng-options="o for o in selectedSourceField.comparisonOperators | orderBy:'position'" required></select>
     </div>
 
     <div class="form-group">

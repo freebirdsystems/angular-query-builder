@@ -20,7 +20,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "              ng-change=\"selectComparisonOperator()\"\n" +
     "              ng-model=\"selectedComparisonOperator\"\n" +
     "              ng-class=\"searchConditionForm.$submitted && searchConditionForm.comparisonOperator.$error.required ? 'aqb-input-error' : ''\"\n" +
-    "              ng-options=\"o in selectedSourceField.comparisonOperators | orderBy:'position'\" required></select>\n" +
+    "              ng-options=\"o for o in selectedSourceField.comparisonOperators | orderBy:'position'\" required></select>\n" +
     "    </div>\n" +
     "\n" +
     "    <div class=\"form-group\">\n" +
