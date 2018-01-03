@@ -100,3 +100,16 @@
 .aqb-animate-combined.ng-leave-active {
     opacity: 0;
 }
+
+.aqb-search-group a {
+    color: #337ab7!important;
+    text-decoration: none!important;
+}
+
+.aqb-search-group .nav-pills>li.active>a, .aqb-search-group .nav-pills>li.active>a:focus, .aqb-search-group .nav-pills>li.active>a:hover {
+    color: #fff!important;
+    background-color: #337ab7!important;
+}
+
+
+
