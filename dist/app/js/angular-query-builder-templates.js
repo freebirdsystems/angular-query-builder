@@ -70,7 +70,7 @@ angular.module("directives/search-group.tpl.html", []).run(["$templateCache", fu
     "        <button class=\"btn btn-sm\" type=\"button\" ng-click=\"removeGroup()\" ng-show=\"canRemoveGroup()\">\n" +
     "            <i class=\"mdi-content-remove-circle i-16\"></i>\n" +
     "        </button>\n" +
-    "        <button class=\"btn\" type=\"button\" ng-click=\"addCondition()\" ng-show=\"group.conditions.length < 1\"><i class=\"icon-plus-sign\"></i> Condition</button>\n" +
+    "        <button class=\"btn\" type=\"button\" ng-click=\"addCondition()\" ng-show=\"group.conditions.length < 1\"><i class=\"icon-plus-sign\"></i> Durum Ekle</button>\n" +
     "    </div>\n" +
     "    <div class=\"aqb-horizontal-divider\"></div>\n" +
     "    <div class=\"aqb-search-group-body\">\n" +
