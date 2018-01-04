@@ -48,14 +48,14 @@
 
     <!-- Type: AutoComplete -->
     <div class="form-group" ng-show="selectedSourceField.type == 'autocomplete'">
-          <ui-select ng-model="_employee.params.phone_interviewer_position_id" theme="bootstrap" ng-change="_employee.filter()" name="comparisonOperator">
+          <ui-select ng-model="inputItem.label" theme="bootstrap" ng-change="_employee.filter()" name="comparisonOperator">
             <ui-select-match placeholder="Arayınız" allow-clear="true">
-            {{$select.selected.user.full_name}}
+            {{$select.selected.value}}
             </ui-select-match>
-            <ui-select-choices refresh="getPhoneViewerPosition($select.search)"
+            <ui-select-choices refresh="getOptions($select.search)"
             refresh-delay="500"
-            repeat="position.id as position in _employee.helper_data.phone_interviewer_position | filter: $select.search">
-            <div>{{position.user.full_name}}</div>
+            repeat="o.key as o.value for o in selectedSourceField.options | filter: $select.search">
+            <div>{{o.value}}</div>
             </ui-select-choices>
           </ui-select>
 

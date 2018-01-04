@@ -117,6 +117,7 @@
             $scope.inputItem = $scope.condition.inputItem;
 
             $scope.$watch("inputItem.label", function () {
+
                 if (!!$scope.inputItem) {
                     if (!$scope.inputItem.isTypeahead) {
                         // Set data to label if it is not a typeahead

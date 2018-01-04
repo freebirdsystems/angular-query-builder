@@ -52,14 +52,14 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "\n" +
     "    <!-- Type: AutoComplete -->\n" +
     "    <div class=\"form-group\" ng-show=\"selectedSourceField.type == 'autocomplete'\">\n" +
-    "          <ui-select ng-model=\"_employee.params.phone_interviewer_position_id\" theme=\"bootstrap\" ng-change=\"_employee.filter()\" name=\"comparisonOperator\">\n" +
+    "          <ui-select ng-model=\"inputItem.label\" theme=\"bootstrap\" ng-change=\"_employee.filter()\" name=\"comparisonOperator\">\n" +
     "            <ui-select-match placeholder=\"Arayınız\" allow-clear=\"true\">\n" +
-    "            {{$select.selected.user.full_name}}\n" +
+    "            {{$select.selected.value}}\n" +
     "            </ui-select-match>\n" +
-    "            <ui-select-choices refresh=\"getPhoneViewerPosition($select.search)\"\n" +
+    "            <ui-select-choices refresh=\"getOptions($select.search)\"\n" +
     "            refresh-delay=\"500\"\n" +
-    "            repeat=\"position.id as position in _employee.helper_data.phone_interviewer_position | filter: $select.search\">\n" +
-    "            <div>{{position.user.full_name}}</div>\n" +
+    "            repeat=\"o.key as o.value for o in selectedSourceField.options | filter: $select.search\">\n" +
+    "            <div>{{o.value}}</div>\n" +
     "            </ui-select-choices>\n" +
     "          </ui-select>\n" +
     "\n" +
