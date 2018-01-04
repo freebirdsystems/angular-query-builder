@@ -24,7 +24,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "    </div>\n" +
     "\n" +
     "    <!-- Type: Text -->\n" +
-    "    <div class=\"form-group\" ng-if=\"selectedSourceField.type == 'text'\">\n" +
+    "    <div class=\"form-group\" ng-show=\"selectedSourceField.type == 'text'\">\n" +
     "      <input name=\"inputItem\"\n" +
     "             placeholder=\"Değer Giriniz\"\n" +
     "             class=\"form-control\"\n" +
@@ -37,7 +37,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "    <!-- /Type: Text -->\n" +
     "\n" +
     "    <!-- Type: Select -->\n" +
-    "    <div class=\"form-group\" ng-if=\"selectedSourceField.type == 'select'\">\n" +
+    "    <div class=\"form-group\" ng-show=\"selectedSourceField.type == 'select'\">\n" +
     "\n" +
     "      <select name=\"comparisonOperator\"\n" +
     "            placeholder=\"Seçiniz\"\n" +
@@ -51,7 +51,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "    <!-- /Type: Select -->\n" +
     "\n" +
     "    <!-- Type: AutoComplete -->\n" +
-    "    <div class=\"form-group\" ng-if=\"selectedSourceField.type == 'autocomplete'\">\n" +
+    "    <div class=\"form-group\" ng-show=\"selectedSourceField.type == 'autocomplete'\">\n" +
     "          <ui-select ng-model=\"_employee.params.phone_interviewer_position_id\" theme=\"bootstrap\" ng-change=\"_employee.filter()\" name=\"comparisonOperator\">\n" +
     "            <ui-select-match placeholder=\"Arayınız\" allow-clear=\"true\">\n" +
     "            {{$select.selected.user.full_name}}\n" +

@@ -20,7 +20,7 @@
     </div>
 
     <!-- Type: Text -->
-    <div class="form-group" ng-if="selectedSourceField.type == 'text'">
+    <div class="form-group" ng-show="selectedSourceField.type == 'text'">
       <input name="inputItem"
              placeholder="Değer Giriniz"
              class="form-control"
@@ -33,7 +33,7 @@
     <!-- /Type: Text -->
 
     <!-- Type: Select -->
-    <div class="form-group" ng-if="selectedSourceField.type == 'select'">
+    <div class="form-group" ng-show="selectedSourceField.type == 'select'">
 
       <select name="comparisonOperator"
             placeholder="Seçiniz"
@@ -47,7 +47,7 @@
     <!-- /Type: Select -->
 
     <!-- Type: AutoComplete -->
-    <div class="form-group" ng-if="selectedSourceField.type == 'autocomplete'">
+    <div class="form-group" ng-show="selectedSourceField.type == 'autocomplete'">
           <ui-select ng-model="_employee.params.phone_interviewer_position_id" theme="bootstrap" ng-change="_employee.filter()" name="comparisonOperator">
             <ui-select-match placeholder="Arayınız" allow-clear="true">
             {{$select.selected.user.full_name}}
