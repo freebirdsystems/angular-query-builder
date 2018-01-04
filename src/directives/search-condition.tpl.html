@@ -54,19 +54,10 @@
             </ui-select-match>
             <ui-select-choices refresh="getOptions($select.search)"
             refresh-delay="500"
-            repeat="o.key as o.value for o in selectedSourceField.options | filter: $select.search">
+            repeat="o.key as o in selectedSourceField.options | filter: $select.search">
             <div>{{o.value}}</div>
             </ui-select-choices>
           </ui-select>
-
-<!--       <select name="comparisonOperator"
-            placeholder="Seçiniz"
-            class="form-control"
-            id="{{searchConditionInputItemId}}"
-            ng-model="inputItem.label"
-            ng-class="searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''" 
-            ng-options="o.key as o.value for o in selectedSourceField.options" required></select> -->
-
     </div>
     <!-- /Type: AutoComplete -->
 

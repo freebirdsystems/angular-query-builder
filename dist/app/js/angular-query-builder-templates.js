@@ -58,19 +58,10 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "            </ui-select-match>\n" +
     "            <ui-select-choices refresh=\"getOptions($select.search)\"\n" +
     "            refresh-delay=\"500\"\n" +
-    "            repeat=\"o.key as o.value for o in selectedSourceField.options | filter: $select.search\">\n" +
+    "            repeat=\"o.key as o in selectedSourceField.options | filter: $select.search\">\n" +
     "            <div>{{o.value}}</div>\n" +
     "            </ui-select-choices>\n" +
     "          </ui-select>\n" +
-    "\n" +
-    "<!--       <select name=\"comparisonOperator\"\n" +
-    "            placeholder=\"Seçiniz\"\n" +
-    "            class=\"form-control\"\n" +
-    "            id=\"{{searchConditionInputItemId}}\"\n" +
-    "            ng-model=\"inputItem.label\"\n" +
-    "            ng-class=\"searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''\" \n" +
-    "            ng-options=\"o.key as o.value for o in selectedSourceField.options\" required></select> -->\n" +
-    "\n" +
     "    </div>\n" +
     "    <!-- /Type: AutoComplete -->\n" +
     "\n" +

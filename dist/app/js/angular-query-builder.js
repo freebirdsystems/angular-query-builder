@@ -38,7 +38,8 @@ angular.module('aqb.src.directives.search-condition', [])
         scope: {
             condition: "=",
             conditionIndex: "=",
-            sourceType: "="
+            sourceType: "=",
+            getOptions: "&"
         },
         templateUrl: 'directives/search-condition.tpl.html',
         controller: ['$scope', '$element', '$attrs', '$transclude', function ($scope, $element, $attrs, $transclude) {
@@ -159,6 +160,12 @@ angular.module('aqb.src.directives.search-condition', [])
                     $scope.condition.inputItem = $scope.inputItem;
                 }
             });
+
+
+            $scope.getOptions = function (x) {
+                 // call function
+            };
+
 
             // Input items end
 

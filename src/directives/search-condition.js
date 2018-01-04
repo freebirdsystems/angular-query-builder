@@ -5,7 +5,8 @@
         scope: {
             condition: "=",
             conditionIndex: "=",
-            sourceType: "="
+            sourceType: "=",
+            getOptions: "&"
         },
         templateUrl: 'directives/search-condition.tpl.html',
         controller: ['$scope', '$element', '$attrs', '$transclude', function ($scope, $element, $attrs, $transclude) {
@@ -126,6 +127,12 @@
                     $scope.condition.inputItem = $scope.inputItem;
                 }
             });
+
+
+            $scope.getOptions = function (x) {
+                 // call function
+            };
+
 
             // Input items end
 
