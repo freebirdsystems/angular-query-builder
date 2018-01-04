@@ -28,7 +28,7 @@
             $scope.selectSourceType = function (sourceType) {
                 $scope.group.sourceType = {
                     "name": sourceType.name,
-                    "displayName": sourceType.displayName
+                    "label": sourceType.label
                 };
                 setSelectedSourceType();
             };
@@ -49,7 +49,7 @@
             $scope.selectLogicalOperator = function (logicalOperator) {
                 $scope.group.logicalOperator = {
                     "name": logicalOperator.name,
-                    "displayName": logicalOperator.displayName
+                    "label": logicalOperator.label
                 };
                 setSelectedLogicalOperator();
             };
@@ -95,11 +95,11 @@
                 var newGroup = {
                     "sourceType": {
                         "name": sourceType.name,
-                        "displayName": sourceType.displayName
+                        "label": sourceType.label
                     },
                     "logicalOperator": {
                         "name": logicalOperator.name,
-                        "displayName": logicalOperator.displayName
+                        "label": logicalOperator.label
                     },
                     "conditions": [
                         {}

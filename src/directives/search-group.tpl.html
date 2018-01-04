@@ -4,7 +4,7 @@
             <div class="aqb-nav-pills-container">
                 <ul class="nav nav-pills nav-sm">
                     <li ng-repeat="type in sourceTypes | orderBy:'position'" ng-class="type.name == selectedSourceType.name ? 'active' : ''">
-                        <a href="javascript:void(0)" ng-click="selectSourceType(type)">{{type.displayName}}</a>
+                        <a href="javascript:void(0)" ng-click="selectSourceType(type)">{{type.label}}</a>
                     </li>
                 </ul>
             </div>
@@ -14,7 +14,7 @@
             <div class="aqb-nav-pills-container">
                 <ul class="nav nav-pills nav-sm">
                     <li ng-repeat="operator in logicalOperators | orderBy:'position'" ng-class="operator.name == selectedLogicalOperator.name ? 'active' : ''">
-                        <a href="javascript:void(0)" ng-click="selectLogicalOperator(operator)">{{operator.displayName}}</a>
+                        <a href="javascript:void(0)" ng-click="selectLogicalOperator(operator)">{{operator.label}}</a>
                     </li>
                 </ul>
             </div>

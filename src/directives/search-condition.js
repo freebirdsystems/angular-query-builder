@@ -22,7 +22,7 @@
                     return $http.get(sourceUrl + query).then(function (success) {
                         entityMap = {};
                         $.each(success.data, function () {
-                            var label = this.displayName;
+                            var label = this.label;
                             this.isTypeahead = true;
                             entityMap[label] = this;
                             newData.push(label);
@@ -73,7 +73,7 @@
                 if (!!$scope.selectedSourceField) {
                     $scope.condition.sourceField = {
                         "name": $scope.selectedSourceField.name,
-                        "displayName": $scope.selectedSourceField.displayName
+                        "label": $scope.selectedSourceField.label
                     };
                 }
             });
@@ -99,7 +99,7 @@
 
                     $scope.condition.comparisonOperator = {
                         "name": $scope.selectedComparisonOperator.name,
-                        "displayName": $scope.selectedComparisonOperator.displayName
+                        "label": $scope.selectedComparisonOperator.label
                     };
                     if (!!$scope.selectedComparisonOperator.typeaheadUrl) {
                         // Wait until DOM has finished rendering
@@ -119,11 +119,11 @@
 
             $scope.inputItem = $scope.condition.inputItem;
 
-            $scope.$watch("inputItem.displayName", function () {
+            $scope.$watch("inputItem.label", function () {
                 if (!!$scope.inputItem) {
                     if (!$scope.inputItem.isTypeahead) {
-                        // Set data to displayName if it is not a typeahead
-                        $scope.inputItem.data = $scope.inputItem.displayName;
+                        // Set data to label if it is not a typeahead
+                        $scope.inputItem.data = $scope.inputItem.label;
                     }
                     $scope.condition.inputItem = $scope.inputItem;
                 }

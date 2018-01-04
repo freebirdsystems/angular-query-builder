@@ -30,7 +30,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "             class=\"form-control\"\n" +
     "             type=\"text\"\n" +
     "             id=\"{{searchConditionInputItemId}}\"\n" +
-    "             ng-model=\"inputItem.displayName\"\n" +
+    "             ng-model=\"inputItem.label\"\n" +
     "             ng-class=\"searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''\" \n" +
     "             autocomplete=\"off\" required>\n" +
     "    </div>\n" +
@@ -43,12 +43,36 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "            placeholder=\"Seçiniz\"\n" +
     "            class=\"form-control\"\n" +
     "            id=\"{{searchConditionInputItemId}}\"\n" +
-    "            ng-model=\"inputItem.displayName\"\n" +
+    "            ng-model=\"inputItem.label\"\n" +
     "            ng-class=\"searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''\" \n" +
     "            ng-options=\"o.key as o.value for o in selectedSourceField.options\" required></select>\n" +
     "\n" +
     "    </div>\n" +
     "    <!-- /Type: Select -->\n" +
+    "\n" +
+    "    <!-- Type: AutoComplete -->\n" +
+    "    <div class=\"form-group\" ng-if=\"selectedSourceField.type == 'autocomplete'\">\n" +
+    "          <ui-select ng-model=\"_employee.params.phone_interviewer_position_id\" theme=\"bootstrap\" ng-change=\"_employee.filter()\" name=\"comparisonOperator\">\n" +
+    "            <ui-select-match placeholder=\"Arayınız\" allow-clear=\"true\">\n" +
+    "            {{$select.selected.user.full_name}}\n" +
+    "            </ui-select-match>\n" +
+    "            <ui-select-choices refresh=\"getPhoneViewerPosition($select.search)\"\n" +
+    "            refresh-delay=\"500\"\n" +
+    "            repeat=\"position.id as position in _employee.helper_data.phone_interviewer_position | filter: $select.search\">\n" +
+    "            <div>{{position.user.full_name}}</div>\n" +
+    "            </ui-select-choices>\n" +
+    "          </ui-select>\n" +
+    "\n" +
+    "<!--       <select name=\"comparisonOperator\"\n" +
+    "            placeholder=\"Seçiniz\"\n" +
+    "            class=\"form-control\"\n" +
+    "            id=\"{{searchConditionInputItemId}}\"\n" +
+    "            ng-model=\"inputItem.label\"\n" +
+    "            ng-class=\"searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''\" \n" +
+    "            ng-options=\"o.key as o.value for o in selectedSourceField.options\" required></select> -->\n" +
+    "\n" +
+    "    </div>\n" +
+    "    <!-- /Type: AutoComplete -->\n" +
     "\n" +
     "    <button class=\"btn btn-sm\" type=\"submit\" ng-click=\"addCondition(searchConditionForm)\" ng-show=\"canAddCondition(conditionIndex)\">\n" +
     "      <i class=\"mdi-content-add-circle i-16\"></i>\n" +
@@ -67,7 +91,7 @@ angular.module("directives/search-group.tpl.html", []).run(["$templateCache", fu
     "            <div class=\"aqb-nav-pills-container\">\n" +
     "                <ul class=\"nav nav-pills nav-sm\">\n" +
     "                    <li ng-repeat=\"type in sourceTypes | orderBy:'position'\" ng-class=\"type.name == selectedSourceType.name ? 'active' : ''\">\n" +
-    "                        <a href=\"javascript:void(0)\" ng-click=\"selectSourceType(type)\">{{type.displayName}}</a>\n" +
+    "                        <a href=\"javascript:void(0)\" ng-click=\"selectSourceType(type)\">{{type.label}}</a>\n" +
     "                    </li>\n" +
     "                </ul>\n" +
     "            </div>\n" +
@@ -77,7 +101,7 @@ angular.module("directives/search-group.tpl.html", []).run(["$templateCache", fu
     "            <div class=\"aqb-nav-pills-container\">\n" +
     "                <ul class=\"nav nav-pills nav-sm\">\n" +
     "                    <li ng-repeat=\"operator in logicalOperators | orderBy:'position'\" ng-class=\"operator.name == selectedLogicalOperator.name ? 'active' : ''\">\n" +
-    "                        <a href=\"javascript:void(0)\" ng-click=\"selectLogicalOperator(operator)\">{{operator.displayName}}</a>\n" +
+    "                        <a href=\"javascript:void(0)\" ng-click=\"selectLogicalOperator(operator)\">{{operator.label}}</a>\n" +
     "                    </li>\n" +
     "                </ul>\n" +
     "            </div>\n" +
