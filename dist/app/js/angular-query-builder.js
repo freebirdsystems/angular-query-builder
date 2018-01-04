@@ -118,7 +118,7 @@ angular.module('aqb.src.directives.search-condition', [])
             function setSelectedComparisonOperator() {
                 if (!!$scope.selectedSourceField) {
                     $scope.selectedComparisonOperator = _.find($scope.selectedSourceField.comparisonOperators, function (operator) {
-                        return operator.name === $scope.condition.comparisonOperator.name;
+                        return operator === $scope.condition.comparisonOperator;
                     });
                 }
             }
@@ -130,10 +130,7 @@ angular.module('aqb.src.directives.search-condition', [])
                         $scope.inputItem = undefined;
                     }
 
-                    $scope.condition.comparisonOperator = {
-                        "name": $scope.selectedComparisonOperator.name,
-                        "label": $scope.selectedComparisonOperator.label
-                    };
+                    $scope.condition.comparisonOperator = $scope.selectedComparisonOperator;
                     if (!!$scope.selectedComparisonOperator.typeaheadUrl) {
                         // Wait until DOM has finished rendering
                         $timeout(function () {
