@@ -116,4 +116,8 @@
 }
 
 
+.aqb-search-group .form-inline .ui-select-search, .aqb-search-group .form-inline .ui-select-match span {
+  width: 300px!important;
+}
+
 
