@@ -48,7 +48,7 @@
 
     <!-- Type: AutoComplete -->
     <div class="form-group" ng-show="selectedSourceField.type == 'autocomplete'">
-          <ui-select ng-model="inputItem.label" theme="bootstrap" ng-change="_employee.filter()" name="comparisonOperator">
+          <ui-select ng-model="inputItem.label" theme="bootstrap" ng-change="_employee.filter()" name="comparisonOperator" style="min-width: 151px">
             <ui-select-match placeholder="Arayınız" allow-clear="true">
             {{$select.selected.value}}
             </ui-select-match>
