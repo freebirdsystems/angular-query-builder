@@ -32,6 +32,19 @@
     </div>
     <!-- /Type: Text -->
 
+    <!-- Type: Number -->
+    <div class="form-group" ng-show="selectedSourceField.type == 'number'">
+      <input name="inputItem"
+             placeholder="Değer Giriniz"
+             class="form-control"
+             type="number"
+             id="{{searchConditionInputItemId}}"
+             ng-model="inputItem.label"
+             ng-class="searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''" 
+             autocomplete="off" required>
+    </div>
+    <!-- /Type: Number -->
+
     <!-- Type: Select -->
     <div class="form-group" ng-show="selectedSourceField.type == 'select'">
 
@@ -48,7 +61,7 @@
 
     <!-- Type: AutoComplete -->
     <div class="form-group" ng-show="selectedSourceField.type == 'autocomplete'">
-          <ui-select ng-model="inputItem.label" theme="bootstrap" ng-change="_employee.filter()" name="comparisonOperator" style="min-width: 151px">
+          <ui-select ng-model="inputItem.label" theme="bootstrap" name="comparisonOperator" style="min-width: 151px">
             <ui-select-match placeholder="Arayınız" allow-clear="true">
             {{$select.selected.value}}
             </ui-select-match>

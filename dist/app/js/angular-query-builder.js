@@ -1,4 +1,4 @@
-/*! angular-query-builder - v1.0.0 - 2018-01-05 */
+/*! angular-query-builder - v1.0.0 - 2018-01-08 */
 /*! https://github.com/niklr/angular-query-builder */
 angular.module('angular-query-builder', [
     'ngAnimate',

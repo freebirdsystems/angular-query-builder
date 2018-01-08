@@ -36,6 +36,19 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "    </div>\n" +
     "    <!-- /Type: Text -->\n" +
     "\n" +
+    "    <!-- Type: Number -->\n" +
+    "    <div class=\"form-group\" ng-show=\"selectedSourceField.type == 'number'\">\n" +
+    "      <input name=\"inputItem\"\n" +
+    "             placeholder=\"Değer Giriniz\"\n" +
+    "             class=\"form-control\"\n" +
+    "             type=\"number\"\n" +
+    "             id=\"{{searchConditionInputItemId}}\"\n" +
+    "             ng-model=\"inputItem.label\"\n" +
+    "             ng-class=\"searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''\" \n" +
+    "             autocomplete=\"off\" required>\n" +
+    "    </div>\n" +
+    "    <!-- /Type: Number -->\n" +
+    "\n" +
     "    <!-- Type: Select -->\n" +
     "    <div class=\"form-group\" ng-show=\"selectedSourceField.type == 'select'\">\n" +
     "\n" +
@@ -52,7 +65,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "\n" +
     "    <!-- Type: AutoComplete -->\n" +
     "    <div class=\"form-group\" ng-show=\"selectedSourceField.type == 'autocomplete'\">\n" +
-    "          <ui-select ng-model=\"inputItem.label\" theme=\"bootstrap\" ng-change=\"_employee.filter()\" name=\"comparisonOperator\" style=\"min-width: 151px\">\n" +
+    "          <ui-select ng-model=\"inputItem.label\" theme=\"bootstrap\" name=\"comparisonOperator\" style=\"min-width: 151px\">\n" +
     "            <ui-select-match placeholder=\"Arayınız\" allow-clear=\"true\">\n" +
     "            {{$select.selected.value}}\n" +
     "            </ui-select-match>\n" +
