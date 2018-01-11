@@ -58,7 +58,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "            id=\"{{searchConditionInputItemId}}\"\n" +
     "            ng-model=\"inputItem.label\"\n" +
     "            ng-class=\"searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''\" \n" +
-    "            ng-options=\"o.key for o in selectedSourceField.options\" required></select>\n" +
+    "            ng-options=\"o.key as o.value for o in selectedSourceField.options\" required></select>\n" +
     "\n" +
     "    </div>\n" +
     "    <!-- /Type: Select -->\n" +

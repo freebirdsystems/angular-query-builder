@@ -54,7 +54,7 @@
             id="{{searchConditionInputItemId}}"
             ng-model="inputItem.label"
             ng-class="searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''" 
-            ng-options="o.key for o in selectedSourceField.options" required></select>
+            ng-options="o.key as o.value for o in selectedSourceField.options" required></select>
 
     </div>
     <!-- /Type: Select -->
