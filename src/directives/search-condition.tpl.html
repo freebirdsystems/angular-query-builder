@@ -65,7 +65,7 @@
               <ui-select-match placeholder="Arayınız">
                 {{$select.selected.user.full_name}}
               </ui-select-match>
-              <ui-select-choices refresh="getOptions($select.search)" refresh-delay="500"
+              <ui-select-choices refresh="getOptions(selectedSourceField, $select.search)" refresh-delay="500"
                 repeat="o in selectedSourceField.options | filter: $select.search">
                 <div ng-bind-html="o.user.full_name | highlight: $select.search"></div>
               </ui-select-choices>
