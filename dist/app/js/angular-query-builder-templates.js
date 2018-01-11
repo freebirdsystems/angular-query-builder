@@ -24,7 +24,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "    </div>\n" +
     "\n" +
     "    <!-- Type: Text -->\n" +
-    "    <div class=\"form-group\" ng-show=\"selectedSourceField.type == 'text'\">\n" +
+    "    <div class=\"form-group\" ng-if=\"selectedSourceField.type == 'text'\">\n" +
     "      <input name=\"inputItem\"\n" +
     "             placeholder=\"Değer Giriniz\"\n" +
     "             class=\"form-control\"\n" +
@@ -37,7 +37,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "    <!-- /Type: Text -->\n" +
     "\n" +
     "    <!-- Type: Number -->\n" +
-    "    <div class=\"form-group\" ng-show=\"selectedSourceField.type == 'number'\">\n" +
+    "    <div class=\"form-group\" ng-if=\"selectedSourceField.type == 'number'\">\n" +
     "      <input name=\"inputItem\"\n" +
     "             placeholder=\"Değer Giriniz\"\n" +
     "             class=\"form-control\"\n" +
@@ -50,7 +50,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "    <!-- /Type: Number -->\n" +
     "\n" +
     "    <!-- Type: Select -->\n" +
-    "    <div class=\"form-group\" ng-show=\"selectedSourceField.type == 'select'\">\n" +
+    "    <div class=\"form-group\" ng-if=\"selectedSourceField.type == 'select'\">\n" +
     "\n" +
     "      <select name=\"inputItem\"\n" +
     "            placeholder=\"Seçiniz\"\n" +
@@ -58,26 +58,26 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "            id=\"{{searchConditionInputItemId}}\"\n" +
     "            ng-model=\"inputItem.label\"\n" +
     "            ng-class=\"searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''\" \n" +
-    "            ng-options=\"o.key as o.value for o in selectedSourceField.options\" required></select>\n" +
+    "            ng-options=\"o.key for o in selectedSourceField.options\" required></select>\n" +
     "\n" +
     "    </div>\n" +
     "    <!-- /Type: Select -->\n" +
     "\n" +
     "    <!-- Type: AutoComplete -->\n" +
-    "    <div class=\"form-group\" ng-show=\"selectedSourceField.type == 'autocomplete'\">\n" +
+    "    <div class=\"form-group\" ng-if=\"selectedSourceField.type == 'autocomplete'\">\n" +
     "            <ui-select ng-model=\"inputItem.label\" id=\"{{searchConditionInputItemId}}\" name=\"inputItem\" theme=\"bootstrap\" style=\"min-width: 151px\" required>\n" +
     "              <ui-select-match placeholder=\"Arayınız\">\n" +
     "                {{$select.selected.user.full_name}}\n" +
     "              </ui-select-match>\n" +
     "              <ui-select-choices refresh=\"getOptions(selectedSourceField, $select.search)\" refresh-delay=\"500\"\n" +
-    "                repeat=\"o in selectedSourceField.options | filter: $select.search\">\n" +
+    "                repeat=\"o.id as o in selectedSourceField.options | filter: $select.search\">\n" +
     "                <div ng-bind-html=\"o.user.full_name | highlight: $select.search\"></div>\n" +
     "              </ui-select-choices>\n" +
     "            </ui-select>\n" +
     "    </div>\n" +
     "    <!-- /Type: AutoComplete -->\n" +
     "\n" +
-    "    <button class=\"btn btn-sm\" type=\"submit\" ng-click=\"addCondition(searchConditionForm)\" ng-show=\"canAddCondition(conditionIndex)\">\n" +
+    "    <button class=\"btn btn-sm\" type=\"submit\" ng-click=\"addCondition(searchConditionForm)\" ng-if=\"canAddCondition(conditionIndex)\">\n" +
     "      <i class=\"mdi-content-add-circle i-16\"></i>\n" +
     "    </button>\n" +
     "    <button class=\"btn btn-sm\" type=\"button\" ng-click=\"removeCondition(conditionIndex)\">\n" +
