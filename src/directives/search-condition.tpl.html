@@ -73,6 +73,20 @@
     </div>
     <!-- /Type: AutoComplete -->
 
+
+    <!-- Type: Date -->
+    <div class="form-group" ng-if="selectedSourceField.type == 'select'">
+        <input type="text" name="inputItem" id="{{searchConditionInputItemId}}" class="form-control"
+            ng-model="inputItem.label"
+            placeholder="Seçiniz"
+            data-date-format="dd.MM.yyyy"
+            data-model-date-format="yyyy-MM-dd"
+            data-autoclose="1"
+            bs-datepicker>
+
+    </div>
+    <!-- /Type: Date -->
+
     <button class="btn btn-sm" type="submit" ng-click="addCondition(searchConditionForm)" ng-if="canAddCondition(conditionIndex)">
       <i class="mdi-content-add-circle i-16"></i>
     </button>

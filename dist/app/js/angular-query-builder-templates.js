@@ -77,6 +77,20 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "    </div>\n" +
     "    <!-- /Type: AutoComplete -->\n" +
     "\n" +
+    "\n" +
+    "    <!-- Type: Date -->\n" +
+    "    <div class=\"form-group\" ng-if=\"selectedSourceField.type == 'select'\">\n" +
+    "        <input type=\"text\" name=\"inputItem\" id=\"{{searchConditionInputItemId}}\" class=\"form-control\"\n" +
+    "            ng-model=\"inputItem.label\"\n" +
+    "            placeholder=\"Seçiniz\"\n" +
+    "            data-date-format=\"dd.MM.yyyy\"\n" +
+    "            data-model-date-format=\"yyyy-MM-dd\"\n" +
+    "            data-autoclose=\"1\"\n" +
+    "            bs-datepicker>\n" +
+    "\n" +
+    "    </div>\n" +
+    "    <!-- /Type: Date -->\n" +
+    "\n" +
     "    <button class=\"btn btn-sm\" type=\"submit\" ng-click=\"addCondition(searchConditionForm)\" ng-if=\"canAddCondition(conditionIndex)\">\n" +
     "      <i class=\"mdi-content-add-circle i-16\"></i>\n" +
     "    </button>\n" +
