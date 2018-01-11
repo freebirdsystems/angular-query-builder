@@ -128,7 +128,7 @@ angular.module('aqb.src.directives.search-condition', [])
             $scope.$watch("selectedComparisonOperator", function (newValue, oldValue) {
                 if (!!$scope.selectedComparisonOperator) {
                     if (newValue !== oldValue) {
-                        $scope.inputItem = undefined;
+                        $scope.inputItem = {};
                     }
 
                     $scope.condition.comparisonOperator = $scope.selectedComparisonOperator;
@@ -148,7 +148,7 @@ angular.module('aqb.src.directives.search-condition', [])
 
             // Input items start
 
-            $scope.inputItem = $scope.condition.inputItem;
+            $scope.inputItem = $scope.condition.inputItem || {};
 
             $scope.$watch("inputItem.label", function () {
 

@@ -95,7 +95,7 @@
             $scope.$watch("selectedComparisonOperator", function (newValue, oldValue) {
                 if (!!$scope.selectedComparisonOperator) {
                     if (newValue !== oldValue) {
-                        $scope.inputItem = undefined;
+                        $scope.inputItem = {};
                     }
 
                     $scope.condition.comparisonOperator = $scope.selectedComparisonOperator;
@@ -115,7 +115,7 @@
 
             // Input items start
 
-            $scope.inputItem = $scope.condition.inputItem;
+            $scope.inputItem = $scope.condition.inputItem || {};
 
             $scope.$watch("inputItem.label", function () {
 
