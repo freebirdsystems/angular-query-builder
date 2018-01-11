@@ -79,7 +79,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "\n" +
     "\n" +
     "    <!-- Type: Date -->\n" +
-    "    <div class=\"form-group\" ng-if=\"selectedSourceField.type == 'select'\">\n" +
+    "    <div class=\"form-group\" ng-if=\"selectedSourceField.type == 'date'\">\n" +
     "        <input type=\"text\" name=\"inputItem\" id=\"{{searchConditionInputItemId}}\" class=\"form-control\"\n" +
     "            ng-model=\"inputItem.label\"\n" +
     "            placeholder=\"Seçiniz\"\n" +
