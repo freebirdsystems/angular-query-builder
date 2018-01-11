@@ -1,4 +1,4 @@
-/*! angular-query-builder - v1.0.0 - 2018-01-08 */
+/*! angular-query-builder - v1.0.0 - 2018-01-11 */
 /*! https://github.com/niklr/angular-query-builder */
 angular.module('angular-query-builder', [
     'ngAnimate',
@@ -42,7 +42,7 @@ angular.module('aqb.src.directives.search-condition', [])
             getOptions: "&"
         },
         templateUrl: 'directives/search-condition.tpl.html',
-        controller: ['$scope', '$element', '$attrs', '$transclude', function ($scope, $element, $attrs, $transclude) {
+        controller: ['$scope', '$element', '$attrs', '$transclude', 'ENV', '$cookies', function ($scope, $element, $attrs, $transclude, ENV, $cookies) {
 
             var searchConditionInputItemId = GuidHelper.create();
             $scope.searchConditionInputItemId = searchConditionInputItemId;
@@ -162,8 +162,34 @@ angular.module('aqb.src.directives.search-condition', [])
             });
 
 
-            $scope.getOptions = function (x) {
-                 // call function
+            $scope.getOptions = function (selectedSourceField, text) {
+                 if(text) {
+                    $http({
+                      method: 'GET',
+                      url: selectedSourceField.source + text,
+                      headers: {
+                           'Content-Type': 'application/json',
+                           'Authorization': 'Bearer ' + $cookies.get(ENV.tokenName || '_token', {'domain': ENV.cookieHost})
+                         }
+                    }).then(function successCallback(response) {
+                         selectedSourceField.options = response.data.data;
+
+                      }, function errorCallback(response) {
+
+                      });
+                }
+            };
+
+
+            $scope.getLabelKey = function(item, labelKey) {
+                if(item && labelKey) {
+                    var value =  labelKey.split('.').reduce(function(prev, curr) {
+                            return prev ? prev[curr] : null;
+                    }, item);
+                    
+
+                    return value;
+                }
             };
 
 

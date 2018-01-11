@@ -52,7 +52,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "    <!-- Type: Select -->\n" +
     "    <div class=\"form-group\" ng-show=\"selectedSourceField.type == 'select'\">\n" +
     "\n" +
-    "      <select name=\"comparisonOperator\"\n" +
+    "      <select name=\"inputItem\"\n" +
     "            placeholder=\"Seçiniz\"\n" +
     "            class=\"form-control\"\n" +
     "            id=\"{{searchConditionInputItemId}}\"\n" +
@@ -65,16 +65,15 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "\n" +
     "    <!-- Type: AutoComplete -->\n" +
     "    <div class=\"form-group\" ng-show=\"selectedSourceField.type == 'autocomplete'\">\n" +
-    "          <ui-select ng-model=\"inputItem.label\" theme=\"bootstrap\" name=\"comparisonOperator\" style=\"min-width: 151px\">\n" +
-    "            <ui-select-match placeholder=\"Arayınız\" allow-clear=\"true\">\n" +
-    "            {{$select.selected.value}}\n" +
-    "            </ui-select-match>\n" +
-    "            <ui-select-choices refresh=\"getOptions($select.search)\"\n" +
-    "            refresh-delay=\"500\"\n" +
-    "            repeat=\"o.key as o in selectedSourceField.options | filter: $select.search\">\n" +
-    "            <div>{{o.value}}</div>\n" +
-    "            </ui-select-choices>\n" +
-    "          </ui-select>\n" +
+    "            <ui-select ng-model=\"inputItem.label\" id=\"{{searchConditionInputItemId}}\" name=\"inputItem\" theme=\"bootstrap\" style=\"min-width: 151px\" required>\n" +
+    "              <ui-select-match placeholder=\"Arayınız\">\n" +
+    "                {{$select.selected.user.full_name}}\n" +
+    "              </ui-select-match>\n" +
+    "              <ui-select-choices refresh=\"getOptions($select.search)\" refresh-delay=\"500\"\n" +
+    "                repeat=\"o in selectedSourceField.options | filter: $select.search\">\n" +
+    "                <div ng-bind-html=\"o.user.full_name | highlight: $select.search\"></div>\n" +
+    "              </ui-select-choices>\n" +
+    "            </ui-select>\n" +
     "    </div>\n" +
     "    <!-- /Type: AutoComplete -->\n" +
     "\n" +

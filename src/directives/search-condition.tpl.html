@@ -48,7 +48,7 @@
     <!-- Type: Select -->
     <div class="form-group" ng-show="selectedSourceField.type == 'select'">
 
-      <select name="comparisonOperator"
+      <select name="inputItem"
             placeholder="Seçiniz"
             class="form-control"
             id="{{searchConditionInputItemId}}"
@@ -61,16 +61,15 @@
 
     <!-- Type: AutoComplete -->
     <div class="form-group" ng-show="selectedSourceField.type == 'autocomplete'">
-          <ui-select ng-model="inputItem.label" theme="bootstrap" name="comparisonOperator" style="min-width: 151px">
-            <ui-select-match placeholder="Arayınız" allow-clear="true">
-            {{$select.selected.value}}
-            </ui-select-match>
-            <ui-select-choices refresh="getOptions($select.search)"
-            refresh-delay="500"
-            repeat="o.key as o in selectedSourceField.options | filter: $select.search">
-            <div>{{o.value}}</div>
-            </ui-select-choices>
-          </ui-select>
+            <ui-select ng-model="inputItem.label" id="{{searchConditionInputItemId}}" name="inputItem" theme="bootstrap" style="min-width: 151px" required>
+              <ui-select-match placeholder="Arayınız">
+                {{$select.selected.user.full_name}}
+              </ui-select-match>
+              <ui-select-choices refresh="getOptions($select.search)" refresh-delay="500"
+                repeat="o in selectedSourceField.options | filter: $select.search">
+                <div ng-bind-html="o.user.full_name | highlight: $select.search"></div>
+              </ui-select-choices>
+            </ui-select>
     </div>
     <!-- /Type: AutoComplete -->
 
