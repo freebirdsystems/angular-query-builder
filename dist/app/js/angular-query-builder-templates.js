@@ -10,7 +10,9 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "            ng-change=\"selectSourceField()\"\n" +
     "            ng-model=\"selectedSourceField\"\n" +
     "            ng-class=\"searchConditionForm.$submitted && searchConditionForm.sourceField.$error.required ? 'aqb-input-error' : ''\"\n" +
-    "            ng-options=\"f.label for f in sourceType.sourceFields | orderBy:'position'\" required></select>\n" +
+    "            ng-options=\"f.label for f in sourceType.sourceFields | orderBy:'position'\" required>\n" +
+    "              <option value='' disabled selected>Alan Seçiniz</option>\n" +
+    "            </select>\n" +
     "    </div>\n" +
     "\n" +
     "    <div class=\"form-group\">\n" +
@@ -20,7 +22,9 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "              ng-change=\"selectComparisonOperator()\"\n" +
     "              ng-model=\"selectedComparisonOperator\"\n" +
     "              ng-class=\"searchConditionForm.$submitted && searchConditionForm.comparisonOperator.$error.required ? 'aqb-input-error' : ''\"\n" +
-    "              ng-options=\"o for o in selectedSourceField.comparisonOperators | orderBy:'position'\" required></select>\n" +
+    "              ng-options=\"o for o in selectedSourceField.comparisonOperators | orderBy:'position'\" required>\n" +
+    "                <option value='' disabled selected>Operatör Seçiniz</option>\n" +
+    "              </select>\n" +
     "    </div>\n" +
     "\n" +
     "    <!-- Type: Text -->\n" +
@@ -58,14 +62,16 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "            id=\"{{searchConditionInputItemId}}\"\n" +
     "            ng-model=\"inputItem.label\"\n" +
     "            ng-class=\"searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''\" \n" +
-    "            ng-options=\"o.key as o.value for o in selectedSourceField.options\" required></select>\n" +
+    "            ng-options=\"o.key as o.value for o in selectedSourceField.options\" required>\n" +
+    "              <option value='' disabled selected>Seçiniz</option>\n" +
+    "            </select>\n" +
     "\n" +
     "    </div>\n" +
     "    <!-- /Type: Select -->\n" +
     "\n" +
     "    <!-- Type: AutoComplete -->\n" +
     "    <div class=\"form-group\" ng-if=\"selectedSourceField.type == 'autocomplete'\">\n" +
-    "            <ui-select ng-model=\"inputItem.label\" id=\"{{searchConditionInputItemId}}\" name=\"inputItem\" theme=\"bootstrap\" style=\"min-width: 151px\" required>\n" +
+    "            <ui-select ng-model=\"inputItem.label\" id=\"{{searchConditionInputItemId}}\" name=\"inputItem\" theme=\"bootstrap\" style=\"min-width: 209px\" required>\n" +
     "              <ui-select-match placeholder=\"Arayınız\">\n" +
     "                {{$select.selected.user.full_name}}\n" +
     "              </ui-select-match>\n" +
