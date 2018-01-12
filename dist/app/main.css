@@ -117,7 +117,7 @@
 
 
 .aqb-search-group .form-inline .ui-select-search, .aqb-search-group .form-inline .ui-select-match span {
-  min-width: 209px!important;
+    width: 100%!important;
 }
 
 
