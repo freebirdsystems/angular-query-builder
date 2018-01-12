@@ -89,6 +89,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "        <input type=\"text\" name=\"inputItem\" id=\"{{searchConditionInputItemId}}\" class=\"form-control\"\n" +
     "            ng-model=\"inputItem.label\"\n" +
     "            placeholder=\"Seçiniz\"\n" +
+    "             data-date-type=\"string\"\n" +
     "            data-date-format=\"dd.MM.yyyy\"\n" +
     "            data-model-date-format=\"yyyy-MM-dd\"\n" +
     "            data-autoclose=\"1\"\n" +
