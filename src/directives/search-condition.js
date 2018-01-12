@@ -131,7 +131,7 @@
 
             $scope.getOptions = function (selectedSourceField, text) {
                  if(text) {
-                    $http({
+                    return $scope.indicatorPromise = $http({
                       method: 'GET',
                       url: selectedSourceField.source + text,
                       headers: {

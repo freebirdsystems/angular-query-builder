@@ -66,7 +66,7 @@
     <!-- /Type: Select -->
 
     <!-- Type: AutoComplete -->
-    <div class="form-group" ng-if="selectedSourceField.type == 'autocomplete'">
+    <div class="form-group" ng-if="selectedSourceField.type == 'autocomplete'" cg-busy="indicatorPromise">
             <ui-select ng-model="inputItem.label" id="{{searchConditionInputItemId}}" name="inputItem" theme="bootstrap" style="min-width: 209px" required>
               <ui-select-match placeholder="Arayınız">
                 {{$select.selected.user.full_name}}

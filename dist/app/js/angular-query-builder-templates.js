@@ -70,7 +70,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "    <!-- /Type: Select -->\n" +
     "\n" +
     "    <!-- Type: AutoComplete -->\n" +
-    "    <div class=\"form-group\" ng-if=\"selectedSourceField.type == 'autocomplete'\">\n" +
+    "    <div class=\"form-group\" ng-if=\"selectedSourceField.type == 'autocomplete'\" cg-busy=\"indicatorPromise\">\n" +
     "            <ui-select ng-model=\"inputItem.label\" id=\"{{searchConditionInputItemId}}\" name=\"inputItem\" theme=\"bootstrap\" style=\"min-width: 209px\" required>\n" +
     "              <ui-select-match placeholder=\"Arayınız\">\n" +
     "                {{$select.selected.user.full_name}}\n" +
