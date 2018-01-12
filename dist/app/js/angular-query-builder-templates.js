@@ -132,9 +132,11 @@ angular.module("directives/search-group.tpl.html", []).run(["$templateCache", fu
     "        </div>\n" +
     "        <button class=\"btn btn-sm\" type=\"button\" ng-click=\"addGroup()\" ng-show=\"canAddGroup()\">\n" +
     "            <i class=\"mdi-content-add-circle i-16\"></i>\n" +
+    "            Grup Ekle\n" +
     "        </button>\n" +
     "        <button class=\"btn btn-sm\" type=\"button\" ng-click=\"removeGroup()\" ng-show=\"canRemoveGroup()\">\n" +
     "            <i class=\"mdi-content-remove-circle i-16\"></i>\n" +
+    "            Grup Sil\n" +
     "        </button>\n" +
     "        <button class=\"btn\" type=\"button\" ng-click=\"addCondition()\" ng-show=\"group.conditions.length < 1\"><i class=\"icon-plus-sign\"></i> Durum Ekle</button>\n" +
     "    </div>\n" +
