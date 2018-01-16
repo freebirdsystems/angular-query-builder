@@ -2,7 +2,7 @@ angular.module('templates-aqb', ['directives/search-condition.tpl.html', 'direct
 
 angular.module("directives/search-condition.tpl.html", []).run(["$templateCache", function ($templateCache) {
   $templateCache.put("directives/search-condition.tpl.html",
-    "<form class=\"form-inline aqb-search-condition\" name=\"searchConditionForm\">\n" +
+    "<form class=\"form-inline aqb-search-condition\" name=\"searchConditionForm\" novalidate>\n" +
     "    <div class=\"form-group\">\n" +
     "      <select name=\"sourceField\"\n" +
     "            placeholder=\"Alan Seçiniz\"\n" +

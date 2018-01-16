@@ -60,7 +60,7 @@
 }
 
 .aqb-input-error {
-    border-color: #b94a48;
+    border-color: #b94a48!important;
 }
 
 /* animate enter/leave */
