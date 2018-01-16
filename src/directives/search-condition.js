@@ -70,7 +70,12 @@
             }
             setSelectedSourceField();
 
-            $scope.$watch("selectedSourceField", function () {
+            $scope.$watch("selectedSourceField", function (newValue, oldValue) {
+
+                if (newValue !== oldValue) {
+                    $scope.inputItem = {};
+                }
+
                 if (!!$scope.selectedSourceField) {
                     $scope.condition.sourceField = {
                         "name": $scope.selectedSourceField.name,
@@ -94,10 +99,6 @@
 
             $scope.$watch("selectedComparisonOperator", function (newValue, oldValue) {
                 if (!!$scope.selectedComparisonOperator) {
-                    if (newValue !== oldValue) {
-                        $scope.inputItem = {};
-                    }
-
                     $scope.condition.comparisonOperator = $scope.selectedComparisonOperator;
                     if (!!$scope.selectedComparisonOperator.typeaheadUrl) {
                         // Wait until DOM has finished rendering
