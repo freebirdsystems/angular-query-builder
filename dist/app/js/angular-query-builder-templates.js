@@ -10,7 +10,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "            ng-change=\"selectSourceField()\"\n" +
     "            ng-model=\"selectedSourceField\"\n" +
     "            ng-class=\"searchConditionForm.$submitted && searchConditionForm.sourceField.$error.required ? 'aqb-input-error' : ''\"\n" +
-    "            ng-options=\"f.label for f in sourceType.sourceFields | orderBy:'position'\" required>\n" +
+    "            ng-options=\"f.label for f in sourceType.sourceFields | orderBy:'position'\">\n" +
     "              <option value='' disabled selected>Alan Seçiniz</option>\n" +
     "            </select>\n" +
     "    </div>\n" +
@@ -22,7 +22,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "              ng-change=\"selectComparisonOperator()\"\n" +
     "              ng-model=\"selectedComparisonOperator\"\n" +
     "              ng-class=\"searchConditionForm.$submitted && searchConditionForm.comparisonOperator.$error.required ? 'aqb-input-error' : ''\"\n" +
-    "              ng-options=\"o.label for o in selectedSourceField.comparisonOperators | orderBy:'position'\" required>\n" +
+    "              ng-options=\"o.label for o in selectedSourceField.comparisonOperators | orderBy:'position'\">\n" +
     "                <option value='' disabled selected>Operatör Seçiniz</option>\n" +
     "              </select>\n" +
     "    </div>\n" +
@@ -36,7 +36,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "             id=\"{{searchConditionInputItemId}}\"\n" +
     "             ng-model=\"inputItem.label\"\n" +
     "             ng-class=\"searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''\" \n" +
-    "             autocomplete=\"off\" required>\n" +
+    "             autocomplete=\"off\">\n" +
     "    </div>\n" +
     "    <!-- /Type: Text -->\n" +
     "\n" +
@@ -49,7 +49,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "             id=\"{{searchConditionInputItemId}}\"\n" +
     "             ng-model=\"inputItem.label\"\n" +
     "             ng-class=\"searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''\" \n" +
-    "             autocomplete=\"off\" required>\n" +
+    "             autocomplete=\"off\">\n" +
     "    </div>\n" +
     "    <!-- /Type: Number -->\n" +
     "\n" +
@@ -62,7 +62,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "            id=\"{{searchConditionInputItemId}}\"\n" +
     "            ng-model=\"inputItem.label\"\n" +
     "            ng-class=\"searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''\" \n" +
-    "            ng-options=\"o.key as o.value for o in selectedSourceField.options\" required>\n" +
+    "            ng-options=\"o.key as o.value for o in selectedSourceField.options\">\n" +
     "              <option value='' disabled selected>Seçiniz</option>\n" +
     "            </select>\n" +
     "\n" +
@@ -71,7 +71,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "\n" +
     "    <!-- Type: AutoComplete -->\n" +
     "    <div class=\"form-group\" ng-if=\"selectedSourceField.type == 'autocomplete'\" cg-busy=\"indicatorPromise\">\n" +
-    "            <ui-select ng-model=\"inputItem.label\" id=\"{{searchConditionInputItemId}}\" name=\"inputItem\" theme=\"bootstrap\" style=\"min-width: 209px\" required>\n" +
+    "            <ui-select ng-model=\"inputItem.label\" id=\"{{searchConditionInputItemId}}\" name=\"inputItem\" theme=\"bootstrap\" style=\"min-width: 209px\">\n" +
     "              <ui-select-match placeholder=\"Arayınız\">\n" +
     "                {{$select.selected.user.full_name}}\n" +
     "              </ui-select-match>\n" +

@@ -6,7 +6,7 @@
             ng-change="selectSourceField()"
             ng-model="selectedSourceField"
             ng-class="searchConditionForm.$submitted && searchConditionForm.sourceField.$error.required ? 'aqb-input-error' : ''"
-            ng-options="f.label for f in sourceType.sourceFields | orderBy:'position'" required>
+            ng-options="f.label for f in sourceType.sourceFields | orderBy:'position'">
               <option value='' disabled selected>Alan Seçiniz</option>
             </select>
     </div>
@@ -18,7 +18,7 @@
               ng-change="selectComparisonOperator()"
               ng-model="selectedComparisonOperator"
               ng-class="searchConditionForm.$submitted && searchConditionForm.comparisonOperator.$error.required ? 'aqb-input-error' : ''"
-              ng-options="o.label for o in selectedSourceField.comparisonOperators | orderBy:'position'" required>
+              ng-options="o.label for o in selectedSourceField.comparisonOperators | orderBy:'position'">
                 <option value='' disabled selected>Operatör Seçiniz</option>
               </select>
     </div>
@@ -32,7 +32,7 @@
              id="{{searchConditionInputItemId}}"
              ng-model="inputItem.label"
              ng-class="searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''" 
-             autocomplete="off" required>
+             autocomplete="off">
     </div>
     <!-- /Type: Text -->
 
@@ -45,7 +45,7 @@
              id="{{searchConditionInputItemId}}"
              ng-model="inputItem.label"
              ng-class="searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''" 
-             autocomplete="off" required>
+             autocomplete="off">
     </div>
     <!-- /Type: Number -->
 
@@ -58,7 +58,7 @@
             id="{{searchConditionInputItemId}}"
             ng-model="inputItem.label"
             ng-class="searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''" 
-            ng-options="o.key as o.value for o in selectedSourceField.options" required>
+            ng-options="o.key as o.value for o in selectedSourceField.options">
               <option value='' disabled selected>Seçiniz</option>
             </select>
 
@@ -67,7 +67,7 @@
 
     <!-- Type: AutoComplete -->
     <div class="form-group" ng-if="selectedSourceField.type == 'autocomplete'" cg-busy="indicatorPromise">
-            <ui-select ng-model="inputItem.label" id="{{searchConditionInputItemId}}" name="inputItem" theme="bootstrap" style="min-width: 209px" required>
+            <ui-select ng-model="inputItem.label" id="{{searchConditionInputItemId}}" name="inputItem" theme="bootstrap" style="min-width: 209px">
               <ui-select-match placeholder="Arayınız">
                 {{$select.selected.user.full_name}}
               </ui-select-match>
