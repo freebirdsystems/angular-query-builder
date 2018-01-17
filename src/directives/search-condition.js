@@ -91,7 +91,9 @@
             function setSelectedComparisonOperator() {
                 if (!!$scope.selectedSourceField) {
                     $scope.selectedComparisonOperator = _.find($scope.selectedSourceField.comparisonOperators, function (operator) {
-                        return operator === $scope.condition.comparisonOperator;
+                        if(operator.value === $scope.condition.comparisonOperator.value) {
+                            return operator;
+                        }
                     });
                 }
             }
