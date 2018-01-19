@@ -1,4 +1,4 @@
-/*! angular-query-builder - v1.0.0 - 2018-01-17 */
+/*! angular-query-builder - v1.0.0 - 2018-01-19 */
 /*! https://github.com/niklr/angular-query-builder */
 angular.module('angular-query-builder', [
     'ngAnimate',
@@ -107,6 +107,7 @@ angular.module('aqb.src.directives.search-condition', [])
 
                 if (newValue !== oldValue) {
                     $scope.inputItem = {};
+                    $scope.selectedComparisonOperator = newValue.comparisonOperators[0];
                 }
 
                 if (!!$scope.selectedSourceField) {

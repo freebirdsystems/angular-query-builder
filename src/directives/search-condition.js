@@ -74,6 +74,7 @@
 
                 if (newValue !== oldValue) {
                     $scope.inputItem = {};
+                    $scope.selectedComparisonOperator = newValue.comparisonOperators[0];
                 }
 
                 if (!!$scope.selectedSourceField) {
