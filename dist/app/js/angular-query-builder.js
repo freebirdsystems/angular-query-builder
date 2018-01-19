@@ -216,6 +216,7 @@ angular.module('aqb.src.directives.search-group', ['aqb.src.helpers.recursion'])
             sourceTypes: "=",
             logicalOperators: "=",
             activeEmployee: "=",
+            inactiveEmployee: "=",
             changeActive: "&"     
         },
         templateUrl: 'directives/search-group.tpl.html',

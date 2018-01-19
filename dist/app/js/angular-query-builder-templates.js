@@ -131,11 +131,11 @@ angular.module("directives/search-group.tpl.html", []).run(["$templateCache", fu
     "            </div>\n" +
     "            <div class=\"aqb-vertical-divider\"></div>\n" +
     "        </div>\n" +
-    "        <button class=\"btn btn-sm\" type=\"button\" ng-click=\"addGroup()\" ng-show=\"canAddGroup()\">\n" +
+    "        <button class=\"btn btn-sm pull-left\" type=\"button\" ng-click=\"addGroup()\" ng-show=\"canAddGroup()\">\n" +
     "            <i class=\"mdi-content-add-circle i-16\"></i>\n" +
     "            Grup Ekle\n" +
     "        </button>\n" +
-    "        <button class=\"btn btn-sm\" type=\"button\" ng-click=\"removeGroup()\" ng-show=\"canRemoveGroup()\">\n" +
+    "        <button class=\"btn btn-sm pull-left\" type=\"button\" ng-click=\"removeGroup()\" ng-show=\"canRemoveGroup()\">\n" +
     "            <i class=\"mdi-content-remove-circle i-16\"></i>\n" +
     "            Grup Sil\n" +
     "        </button>\n" +
