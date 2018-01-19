@@ -7,7 +7,9 @@
             groups: "=",
             groupIndex: "=",
             sourceTypes: "=",
-            logicalOperators: "="        
+            logicalOperators: "=",
+            activeEmployee: "=",
+            changeActive: "&"     
         },
         templateUrl: 'directives/search-group.tpl.html',
         controller: ['$scope', '$element', '$attrs', '$transclude', function ($scope, $element, $attrs, $transclude) {

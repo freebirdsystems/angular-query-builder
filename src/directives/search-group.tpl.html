@@ -29,6 +29,28 @@
             Grup Sil
         </button>
         <button class="btn" type="button" ng-click="addCondition()" ng-show="group.conditions.length < 1"><i class="icon-plus-sign"></i> Durum Ekle</button>
+        <div class="row m-l">
+          <label for="active" style="vertical-align: top;" translate>Active</label>
+          <label class="ui-switch ui-switch-md m-l" >
+            <input type="checkbox"
+            name="active"
+              ng-true-value="'true'"
+              ng-false-value="'false'"
+              ng-model="activeEmployee"
+              ng-click="changeActive('active')">
+                  <i></i>
+          </label>
+          <label for="inactive" class="m-l" style="vertical-align: top;" translate>Inactive</label>
+          <label class="ui-switch ui-switch-md m-l" >
+            <input type="checkbox"
+            name="inactive"
+              ng-true-value="'true'"
+              ng-false-value="'false'"
+              ng-model="inactiveEmployee"
+              ng-click="changeActive('inactive')">
+                  <i></i>
+          </label>
+        </div>
     </div>
     <div class="aqb-horizontal-divider"></div>
     <div class="aqb-search-group-body">
