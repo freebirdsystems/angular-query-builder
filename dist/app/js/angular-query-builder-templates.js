@@ -139,8 +139,8 @@ angular.module("directives/search-group.tpl.html", []).run(["$templateCache", fu
     "            <i class=\"mdi-content-remove-circle i-16\"></i>\n" +
     "            Grup Sil\n" +
     "        </button>\n" +
-    "        <button class=\"btn\" type=\"button\" ng-click=\"addCondition()\" ng-show=\"group.conditions.length < 1\"><i class=\"icon-plus-sign\"></i> Durum Ekle</button>\n" +
-    "        <div class=\"row m-l\">\n" +
+    "        <button class=\"btn pull-left\" type=\"button\" ng-click=\"addCondition()\" ng-show=\"group.conditions.length < 1\"><i class=\"icon-plus-sign\"></i> Durum Ekle</button>\n" +
+    "        <div class=\"row m-l pull-left\" style=\"margin-top: 5px;\">\n" +
     "          <label for=\"active\" style=\"vertical-align: top;\" translate>Active</label>\n" +
     "          <label class=\"ui-switch ui-switch-md m-l\" >\n" +
     "            <input type=\"checkbox\"\n" +
@@ -148,7 +148,7 @@ angular.module("directives/search-group.tpl.html", []).run(["$templateCache", fu
     "              ng-true-value=\"'true'\"\n" +
     "              ng-false-value=\"'false'\"\n" +
     "              ng-model=\"activeEmployee\"\n" +
-    "              ng-click=\"changeActive('active')\">\n" +
+    "              ng-click=\"changeActive({status:'active'})\">\n" +
     "                  <i></i>\n" +
     "          </label>\n" +
     "          <label for=\"inactive\" class=\"m-l\" style=\"vertical-align: top;\" translate>Inactive</label>\n" +
@@ -158,7 +158,7 @@ angular.module("directives/search-group.tpl.html", []).run(["$templateCache", fu
     "              ng-true-value=\"'true'\"\n" +
     "              ng-false-value=\"'false'\"\n" +
     "              ng-model=\"inactiveEmployee\"\n" +
-    "              ng-click=\"changeActive('inactive')\">\n" +
+    "              ng-click=\"changeActive({status:'inactive'})\">\n" +
     "                  <i></i>\n" +
     "          </label>\n" +
     "        </div>\n" +

@@ -28,8 +28,8 @@
             <i class="mdi-content-remove-circle i-16"></i>
             Grup Sil
         </button>
-        <button class="btn" type="button" ng-click="addCondition()" ng-show="group.conditions.length < 1"><i class="icon-plus-sign"></i> Durum Ekle</button>
-        <div class="row m-l">
+        <button class="btn pull-left" type="button" ng-click="addCondition()" ng-show="group.conditions.length < 1"><i class="icon-plus-sign"></i> Durum Ekle</button>
+        <div class="row m-l pull-left" style="margin-top: 5px;">
           <label for="active" style="vertical-align: top;" translate>Active</label>
           <label class="ui-switch ui-switch-md m-l" >
             <input type="checkbox"
@@ -37,7 +37,7 @@
               ng-true-value="'true'"
               ng-false-value="'false'"
               ng-model="activeEmployee"
-              ng-click="changeActive('active')">
+              ng-click="changeActive({status:'active'})">
                   <i></i>
           </label>
           <label for="inactive" class="m-l" style="vertical-align: top;" translate>Inactive</label>
@@ -47,7 +47,7 @@
               ng-true-value="'true'"
               ng-false-value="'false'"
               ng-model="inactiveEmployee"
-              ng-click="changeActive('inactive')">
+              ng-click="changeActive({status:'inactive'})">
                   <i></i>
           </label>
         </div>

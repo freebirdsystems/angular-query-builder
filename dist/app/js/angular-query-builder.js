@@ -223,6 +223,7 @@ angular.module('aqb.src.directives.search-group', ['aqb.src.helpers.recursion'])
 
             $scope.group = $scope.groups[$scope.groupIndex];
 
+
             // Source types start
 
             function setSelectedSourceType() {

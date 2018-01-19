@@ -16,6 +16,7 @@
 
             $scope.group = $scope.groups[$scope.groupIndex];
 
+
             // Source types start
 
             function setSelectedSourceType() {
