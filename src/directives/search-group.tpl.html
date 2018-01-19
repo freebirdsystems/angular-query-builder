@@ -29,8 +29,8 @@
             Grup Sil
         </button>
         <button class="btn pull-left" type="button" ng-click="addCondition()" ng-show="group.conditions.length < 1"><i class="icon-plus-sign"></i> Durum Ekle</button>
-        <div class="row m-l pull-left" style="margin-top: 5px;" ng-if="$index == 0">
-          <label for="active" style="vertical-align: top;" translate>Active</label>
+        <div class="row m-l pull-left" style="margin-top: 5px;" ng-if="!canRemoveGroup()">
+          <label for="active" style="vertical-align: top;">Aktif Çalışanlar</label>
           <label class="ui-switch ui-switch-md m-l" >
             <input type="checkbox"
             name="active"
@@ -40,7 +40,7 @@
               ng-click="changeActive({status:'active'})">
                   <i></i>
           </label>
-          <label for="inactive" class="m-l" style="vertical-align: top;" translate>Inactive</label>
+          <label for="inactive" class="m-l" style="vertical-align: top;">Pasif Çalışanlar</label>
           <label class="ui-switch ui-switch-md m-l" >
             <input type="checkbox"
             name="inactive"
