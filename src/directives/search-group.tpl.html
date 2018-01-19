@@ -29,7 +29,7 @@
             Grup Sil
         </button>
         <button class="btn pull-left" type="button" ng-click="addCondition()" ng-show="group.conditions.length < 1"><i class="icon-plus-sign"></i> Durum Ekle</button>
-        <div class="row m-l pull-left" style="margin-top: 5px;">
+        <div class="row m-l pull-left" style="margin-top: 5px;" ng-if="$index == 0">
           <label for="active" style="vertical-align: top;" translate>Active</label>
           <label class="ui-switch ui-switch-md m-l" >
             <input type="checkbox"

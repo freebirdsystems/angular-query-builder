@@ -140,7 +140,7 @@ angular.module("directives/search-group.tpl.html", []).run(["$templateCache", fu
     "            Grup Sil\n" +
     "        </button>\n" +
     "        <button class=\"btn pull-left\" type=\"button\" ng-click=\"addCondition()\" ng-show=\"group.conditions.length < 1\"><i class=\"icon-plus-sign\"></i> Durum Ekle</button>\n" +
-    "        <div class=\"row m-l pull-left\" style=\"margin-top: 5px;\">\n" +
+    "        <div class=\"row m-l pull-left\" style=\"margin-top: 5px;\" ng-if=\"$index == 0\">\n" +
     "          <label for=\"active\" style=\"vertical-align: top;\" translate>Active</label>\n" +
     "          <label class=\"ui-switch ui-switch-md m-l\" >\n" +
     "            <input type=\"checkbox\"\n" +
