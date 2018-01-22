@@ -1,4 +1,4 @@
-﻿<form class="form-inline aqb-search-condition" name="searchConditionForm" novalidate>
+﻿<div class="form-inline aqb-search-condition" name="searchConditionForm" novalidate>
     <div class="form-group">
       <select name="sourceField"
             placeholder="Alan Seçiniz"
@@ -94,10 +94,10 @@
     </div>
     <!-- /Type: Date -->
 
-    <button class="btn btn-sm" type="submit" ng-click="addCondition(searchConditionForm)" ng-if="canAddCondition(conditionIndex)">
+    <button class="btn btn-sm" type="button" ng-click="addCondition(searchConditionForm)" ng-if="canAddCondition(conditionIndex)">
       <i class="mdi-content-add-circle i-16"></i>
     </button>
     <button class="btn btn-sm" type="button" ng-click="removeCondition(conditionIndex)">
       <i class="mdi-content-remove-circle i-16"></i>
     </button>
-</form>
+</div>

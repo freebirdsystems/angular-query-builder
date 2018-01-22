@@ -2,7 +2,7 @@ angular.module('templates-aqb', ['directives/search-condition.tpl.html', 'direct
 
 angular.module("directives/search-condition.tpl.html", []).run(["$templateCache", function ($templateCache) {
   $templateCache.put("directives/search-condition.tpl.html",
-    "<form class=\"form-inline aqb-search-condition\" name=\"searchConditionForm\" novalidate>\n" +
+    "<div class=\"form-inline aqb-search-condition\" name=\"searchConditionForm\" novalidate>\n" +
     "    <div class=\"form-group\">\n" +
     "      <select name=\"sourceField\"\n" +
     "            placeholder=\"Alan Seçiniz\"\n" +
@@ -98,13 +98,13 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "    </div>\n" +
     "    <!-- /Type: Date -->\n" +
     "\n" +
-    "    <button class=\"btn btn-sm\" type=\"submit\" ng-click=\"addCondition(searchConditionForm)\" ng-if=\"canAddCondition(conditionIndex)\">\n" +
+    "    <button class=\"btn btn-sm\" type=\"button\" ng-click=\"addCondition(searchConditionForm)\" ng-if=\"canAddCondition(conditionIndex)\">\n" +
     "      <i class=\"mdi-content-add-circle i-16\"></i>\n" +
     "    </button>\n" +
     "    <button class=\"btn btn-sm\" type=\"button\" ng-click=\"removeCondition(conditionIndex)\">\n" +
     "      <i class=\"mdi-content-remove-circle i-16\"></i>\n" +
     "    </button>\n" +
-    "</form>");
+    "</div>");
 }]);
 
 angular.module("directives/search-group.tpl.html", []).run(["$templateCache", function ($templateCache) {
