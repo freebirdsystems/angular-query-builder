@@ -1,4 +1,4 @@
-/*! angular-query-builder - v1.0.0 - 2018-01-22 */
+/*! angular-query-builder - v1.0.0 - 2018-01-23 */
 /*! https://github.com/niklr/angular-query-builder */
 angular.module('angular-query-builder', [
     'ngAnimate',
@@ -215,8 +215,6 @@ angular.module('aqb.src.directives.search-group', ['aqb.src.helpers.recursion'])
             groupIndex: "=",
             sourceTypes: "=",
             logicalOperators: "=",
-            activeEmployee: "=",
-            inactiveEmployee: "=",
             changeActive: "&"     
         },
         templateUrl: 'directives/search-group.tpl.html',

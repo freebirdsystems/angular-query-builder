@@ -30,25 +30,17 @@
         </button>
         <button class="btn pull-left" type="button" ng-click="addCondition()" ng-show="group.conditions.length < 1"><i class="icon-plus-sign"></i> Durum Ekle</button>
         <div class="row m-l pull-left" style="margin-top: 5px;" ng-if="!canRemoveGroup()">
-          <label for="active" style="vertical-align: top;">Aktif Çalışanlar</label>
-          <label class="ui-switch ui-switch-md m-l" >
-            <input type="checkbox"
-            name="active"
-              ng-true-value="'true'"
-              ng-false-value="'false'"
-              ng-model="activeEmployee"
-              ng-click="changeActive({status:'active'})">
-                  <i></i>
+          <label class="radio-inline">
+            <input type="radio" name="personalType" value="actice" ng-change="changeActive({status:'active'})"> 
+            Aktif Çalışanlar
           </label>
-          <label for="inactive" class="m-l" style="vertical-align: top;">Pasif Çalışanlar</label>
-          <label class="ui-switch ui-switch-md m-l" >
-            <input type="checkbox"
-            name="inactive"
-              ng-true-value="'true'"
-              ng-false-value="'false'"
-              ng-model="inactiveEmployee"
-              ng-click="changeActive({status:'inactive'})">
-                  <i></i>
+          <label class="radio-inline">
+            <input type="radio" name="personalType" value="inactive" ng-change="changeActive({status:'inactive'})"> 
+            Pasif Çalışanlar
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="personalType" value="all" ng-change="changeActive({status:'all'})"> 
+            Tüm Çalışanlar
           </label>
         </div>
     </div>

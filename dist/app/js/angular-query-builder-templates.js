@@ -141,25 +141,17 @@ angular.module("directives/search-group.tpl.html", []).run(["$templateCache", fu
     "        </button>\n" +
     "        <button class=\"btn pull-left\" type=\"button\" ng-click=\"addCondition()\" ng-show=\"group.conditions.length < 1\"><i class=\"icon-plus-sign\"></i> Durum Ekle</button>\n" +
     "        <div class=\"row m-l pull-left\" style=\"margin-top: 5px;\" ng-if=\"!canRemoveGroup()\">\n" +
-    "          <label for=\"active\" style=\"vertical-align: top;\">Aktif Çalışanlar</label>\n" +
-    "          <label class=\"ui-switch ui-switch-md m-l\" >\n" +
-    "            <input type=\"checkbox\"\n" +
-    "            name=\"active\"\n" +
-    "              ng-true-value=\"'true'\"\n" +
-    "              ng-false-value=\"'false'\"\n" +
-    "              ng-model=\"activeEmployee\"\n" +
-    "              ng-click=\"changeActive({status:'active'})\">\n" +
-    "                  <i></i>\n" +
+    "          <label class=\"radio-inline\">\n" +
+    "            <input type=\"radio\" name=\"personalType\" value=\"actice\" ng-change=\"changeActive({status:'active'})\"> \n" +
+    "            Aktif Çalışanlar\n" +
     "          </label>\n" +
-    "          <label for=\"inactive\" class=\"m-l\" style=\"vertical-align: top;\">Pasif Çalışanlar</label>\n" +
-    "          <label class=\"ui-switch ui-switch-md m-l\" >\n" +
-    "            <input type=\"checkbox\"\n" +
-    "            name=\"inactive\"\n" +
-    "              ng-true-value=\"'true'\"\n" +
-    "              ng-false-value=\"'false'\"\n" +
-    "              ng-model=\"inactiveEmployee\"\n" +
-    "              ng-click=\"changeActive({status:'inactive'})\">\n" +
-    "                  <i></i>\n" +
+    "          <label class=\"radio-inline\">\n" +
+    "            <input type=\"radio\" name=\"personalType\" value=\"inactive\" ng-change=\"changeActive({status:'inactive'})\"> \n" +
+    "            Pasif Çalışanlar\n" +
+    "          </label>\n" +
+    "          <label class=\"radio-inline\">\n" +
+    "            <input type=\"radio\" name=\"personalType\" value=\"all\" ng-change=\"changeActive({status:'all'})\"> \n" +
+    "            Tüm Çalışanlar\n" +
     "          </label>\n" +
     "        </div>\n" +
     "    </div>\n" +

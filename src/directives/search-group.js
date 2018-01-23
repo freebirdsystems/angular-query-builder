@@ -8,8 +8,6 @@
             groupIndex: "=",
             sourceTypes: "=",
             logicalOperators: "=",
-            activeEmployee: "=",
-            inactiveEmployee: "=",
             changeActive: "&"     
         },
         templateUrl: 'directives/search-group.tpl.html',
