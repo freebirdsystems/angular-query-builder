@@ -76,7 +76,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "                {{$select.selected.user.full_name}}\n" +
     "              </ui-select-match>\n" +
     "              <ui-select-choices refresh=\"getOptions(selectedSourceField, $select.search)\" refresh-delay=\"500\"\n" +
-    "                repeat=\"o.id as o in selectedSourceField.options | filter: $select.search\">\n" +
+    "                repeat=\"o in selectedSourceField.options | filter: $select.search\">\n" +
     "                <div ng-bind-html=\"o.user.full_name | highlight: $select.search\"></div>\n" +
     "              </ui-select-choices>\n" +
     "            </ui-select>\n" +

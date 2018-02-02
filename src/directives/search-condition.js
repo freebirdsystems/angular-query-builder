@@ -126,7 +126,12 @@
                 if (!!$scope.inputItem) {
                     if (!$scope.inputItem.isTypeahead) {
                         // Set data to label if it is not a typeahead
-                        $scope.inputItem.data = $scope.inputItem.label;
+                        if($scope.selectedSourceField.type === 'autocomplete') {
+                            $scope.inputItem.data = $scope.inputItem.label.id;
+                        }
+                        else {
+                            $scope.inputItem.data = $scope.inputItem.label;
+                        }
                     }
                     $scope.condition.inputItem = $scope.inputItem;
                 }
