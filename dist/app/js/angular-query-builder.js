@@ -159,7 +159,7 @@ angular.module('aqb.src.directives.search-condition', [])
                 if (!!$scope.inputItem) {
                     if (!$scope.inputItem.isTypeahead) {
                         // Set data to label if it is not a typeahead
-                        if($scope.selectedSourceField.type === 'autocomplete') {
+                        if($scope.selectedSourceField && $scope.selectedSourceField.type === 'autocomplete') {
                             $scope.inputItem.data = $scope.inputItem.label.id;
                         }
                         else {
