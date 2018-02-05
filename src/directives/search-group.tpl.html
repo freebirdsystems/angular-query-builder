@@ -31,7 +31,7 @@
         <button class="btn pull-left" type="button" ng-click="addCondition()" ng-show="group.conditions.length < 1"><i class="icon-plus-sign"></i> Durum Ekle</button>
         <div class="row m-l pull-left" style="margin-top: 5px;" ng-if="!canRemoveGroup()">
           <label class="radio-inline">
-            <input type="radio" ng-model="personalType" name="personalType" value="actice" ng-click="changeActive({status:'active'})" checked=""> 
+            <input type="radio" ng-model="personalType" name="personalType" value="active" ng-click="changeActive({status:'active'})" checked=""> 
             Aktif Çalışanlar
           </label>
           <label class="radio-inline">
