@@ -8,7 +8,8 @@
             groupIndex: "=",
             sourceTypes: "=",
             logicalOperators: "=",
-            changeActive: "&"     
+            changeActive: "&",
+            personalType: "="     
         },
         templateUrl: 'directives/search-group.tpl.html',
         controller: ['$scope', '$element', '$attrs', '$transclude', function ($scope, $element, $attrs, $transclude) {

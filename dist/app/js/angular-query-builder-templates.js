@@ -142,15 +142,15 @@ angular.module("directives/search-group.tpl.html", []).run(["$templateCache", fu
     "        <button class=\"btn pull-left\" type=\"button\" ng-click=\"addCondition()\" ng-show=\"group.conditions.length < 1\"><i class=\"icon-plus-sign\"></i> Durum Ekle</button>\n" +
     "        <div class=\"row m-l pull-left\" style=\"margin-top: 5px;\" ng-if=\"!canRemoveGroup()\">\n" +
     "          <label class=\"radio-inline\">\n" +
-    "            <input type=\"radio\" name=\"personalType\" value=\"actice\" ng-click=\"changeActive({status:'active'})\" checked=\"\"> \n" +
+    "            <input type=\"radio\" ng-model=\"personalType\" name=\"personalType\" value=\"actice\" ng-click=\"changeActive({status:'active'})\" checked=\"\"> \n" +
     "            Aktif Çalışanlar\n" +
     "          </label>\n" +
     "          <label class=\"radio-inline\">\n" +
-    "            <input type=\"radio\" name=\"personalType\" value=\"inactive\" ng-click=\"changeActive({status:'inactive'})\"> \n" +
+    "            <input type=\"radio\" ng-model=\"personalType\" name=\"personalType\" value=\"inactive\" ng-click=\"changeActive({status:'inactive'})\"> \n" +
     "            Pasif Çalışanlar\n" +
     "          </label>\n" +
     "          <label class=\"radio-inline\">\n" +
-    "            <input type=\"radio\" name=\"personalType\" value=\"all\" ng-click=\"changeActive({status:'all'})\"> \n" +
+    "            <input type=\"radio\" ng-model=\"personalType\" name=\"personalType\" value=\"all\" ng-click=\"changeActive({status:'all'})\"> \n" +
     "            Tüm Çalışanlar\n" +
     "          </label>\n" +
     "        </div>\n" +

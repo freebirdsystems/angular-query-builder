@@ -1,4 +1,4 @@
-/*! angular-query-builder - v1.0.0 - 2018-02-02 */
+/*! angular-query-builder - v1.0.0 - 2018-02-05 */
 /*! https://github.com/niklr/angular-query-builder */
 angular.module('angular-query-builder', [
     'ngAnimate',
@@ -220,7 +220,8 @@ angular.module('aqb.src.directives.search-group', ['aqb.src.helpers.recursion'])
             groupIndex: "=",
             sourceTypes: "=",
             logicalOperators: "=",
-            changeActive: "&"     
+            changeActive: "&",
+            personalType: "="     
         },
         templateUrl: 'directives/search-group.tpl.html',
         controller: ['$scope', '$element', '$attrs', '$transclude', function ($scope, $element, $attrs, $transclude) {
