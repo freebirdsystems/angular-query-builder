@@ -127,7 +127,7 @@
                     if (!$scope.inputItem.isTypeahead) {
                         // Set data to label if it is not a typeahead
                         if($scope.selectedSourceField && $scope.selectedSourceField.type === 'autocomplete') {
-                            $scope.inputItem.data = $scope.inputItem.label.id;
+                            $scope.inputItem.data = $scope.inputItem.label[$scope.selectedSourceField.valueKey || 'id'];
                         }
                         else {
                             $scope.inputItem.data = $scope.inputItem.label;

@@ -1,4 +1,4 @@
-/*! angular-query-builder - v1.0.0 - 2018-06-08 */
+/*! angular-query-builder - v1.2.0 - 2018-07-12 */
 /*! https://github.com/niklr/angular-query-builder */
 angular.module('angular-query-builder', [
     'ngAnimate',
@@ -160,7 +160,7 @@ angular.module('aqb.src.directives.search-condition', [])
                     if (!$scope.inputItem.isTypeahead) {
                         // Set data to label if it is not a typeahead
                         if($scope.selectedSourceField && $scope.selectedSourceField.type === 'autocomplete') {
-                            $scope.inputItem.data = $scope.inputItem.label.id;
+                            $scope.inputItem.data = $scope.inputItem.label[$scope.selectedSourceField.valueKey || 'id'];
                         }
                         else {
                             $scope.inputItem.data = $scope.inputItem.label;
