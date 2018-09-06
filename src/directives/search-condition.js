@@ -112,6 +112,11 @@
                     else {
                         removeTypeahead();
                     }
+
+
+                    if($scope.selectedSourceField.type === 'boolean') {
+                        $scope.inputItem.label = $scope.selectedComparisonOperator.value;
+                    }
                 }
             });
 

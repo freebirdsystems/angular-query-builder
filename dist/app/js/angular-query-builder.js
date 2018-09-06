@@ -1,4 +1,4 @@
-/*! angular-query-builder - v1.2.0 - 2018-07-12 */
+/*! angular-query-builder - v1.3.0 - 2018-09-06 */
 /*! https://github.com/niklr/angular-query-builder */
 angular.module('angular-query-builder', [
     'ngAnimate',
@@ -144,6 +144,11 @@ angular.module('aqb.src.directives.search-condition', [])
                     }
                     else {
                         removeTypeahead();
+                    }
+
+
+                    if($scope.selectedSourceField.type === 'boolean') {
+                        $scope.inputItem.label = $scope.selectedComparisonOperator.value;
                     }
                 }
             });

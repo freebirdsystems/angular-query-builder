@@ -1,6 +1,6 @@
 {
   "name": "angular-query-builder",
-  "version":"1.2.0",
+  "version":"1.3.0",
   "description": "Angular Query Builder",
   "main": [
     "dist/app/js/angular-query-builder-templates.js",
