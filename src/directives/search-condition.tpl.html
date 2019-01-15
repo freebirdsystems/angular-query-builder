@@ -51,17 +51,12 @@
 
     <!-- Type: Select -->
     <div class="form-group" ng-if="selectedSourceField.type == 'select'">
-
-      <select name="inputItem"
-            placeholder="Seçiniz"
-            class="form-control"
-            id="{{searchConditionInputItemId}}"
-            ng-model="inputItem.label"
-            ng-class="searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''" 
-            ng-options="o.key as o.value for o in selectedSourceField.options">
-              <option value='' disabled selected>Seçiniz</option>
-            </select>
-
+      <ui-select name="inputItem" ng-model="inputItem.label" theme="bootstrap" close-on-select="true" title="Seçiniz" ng-class="searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''">
+        <ui-select-match placeholder="Seçiniz">{{$select.selected.name}}</ui-select-match>
+        <ui-select-choices repeat="item.key as item in selectedSourceField.options | filter: $select.search">
+        <div ng-bind-html="item.value | highlight: $select.search"></div>
+        </ui-select-choices>
+      </ui-select>
     </div>
     <!-- /Type: Select -->
 

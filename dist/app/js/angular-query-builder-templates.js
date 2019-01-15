@@ -55,17 +55,12 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "\n" +
     "    <!-- Type: Select -->\n" +
     "    <div class=\"form-group\" ng-if=\"selectedSourceField.type == 'select'\">\n" +
-    "\n" +
-    "      <select name=\"inputItem\"\n" +
-    "            placeholder=\"Seçiniz\"\n" +
-    "            class=\"form-control\"\n" +
-    "            id=\"{{searchConditionInputItemId}}\"\n" +
-    "            ng-model=\"inputItem.label\"\n" +
-    "            ng-class=\"searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''\" \n" +
-    "            ng-options=\"o.key as o.value for o in selectedSourceField.options\">\n" +
-    "              <option value='' disabled selected>Seçiniz</option>\n" +
-    "            </select>\n" +
-    "\n" +
+    "      <ui-select name=\"inputItem\" ng-model=\"inputItem.label\" theme=\"bootstrap\" close-on-select=\"true\" title=\"Seçiniz\" ng-class=\"searchConditionForm.$submitted && searchConditionForm.inputItem.$error.required ? 'aqb-input-error' : ''\">\n" +
+    "        <ui-select-match placeholder=\"Seçiniz\">{{$select.selected.name}}</ui-select-match>\n" +
+    "        <ui-select-choices repeat=\"item.key as item in selectedSourceField.options | filter: $select.search\">\n" +
+    "        <div ng-bind-html=\"item.value | highlight: $select.search\"></div>\n" +
+    "        </ui-select-choices>\n" +
+    "      </ui-select>\n" +
     "    </div>\n" +
     "    <!-- /Type: Select -->\n" +
     "\n" +
