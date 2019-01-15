@@ -52,7 +52,7 @@
     <!-- Type: Select -->
     <div class="form-group" ng-if="selectedSourceField.type == 'select'">
       <ui-select name="inputItem" id="{{searchConditionInputItemId}}" ng-model="inputItem.label" theme="bootstrap" style="min-width: 209px">
-        <ui-select-match placeholder="Seçiniz">{{$select.selected.name}}</ui-select-match>
+        <ui-select-match placeholder="Seçiniz">{{$select.selected.value}}</ui-select-match>
         <ui-select-choices repeat="item.key as item in selectedSourceField.options | filter: $select.search">
         <div ng-bind-html="item.value | highlight: $select.search"></div>
         </ui-select-choices>

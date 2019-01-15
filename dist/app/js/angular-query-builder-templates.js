@@ -56,7 +56,7 @@ angular.module("directives/search-condition.tpl.html", []).run(["$templateCache"
     "    <!-- Type: Select -->\n" +
     "    <div class=\"form-group\" ng-if=\"selectedSourceField.type == 'select'\">\n" +
     "      <ui-select name=\"inputItem\" id=\"{{searchConditionInputItemId}}\" ng-model=\"inputItem.label\" theme=\"bootstrap\" style=\"min-width: 209px\">\n" +
-    "        <ui-select-match placeholder=\"Seçiniz\">{{$select.selected.name}}</ui-select-match>\n" +
+    "        <ui-select-match placeholder=\"Seçiniz\">{{$select.selected.value}}</ui-select-match>\n" +
     "        <ui-select-choices repeat=\"item.key as item in selectedSourceField.options | filter: $select.search\">\n" +
     "        <div ng-bind-html=\"item.value | highlight: $select.search\"></div>\n" +
     "        </ui-select-choices>\n" +
