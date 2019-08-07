@@ -32,7 +32,6 @@
 }
 
 .aqb-search-condition {
-    display: flex;
     margin-top: 10px;
     margin-bottom: 0px;
 }
@@ -121,6 +120,11 @@
     width: 100%!important;
 }
 
-.aqb-search-group .form-inline .form-group {
-    margin: 0 5px;
+
+.aqb-search-group .form-inline .open > .dropdown-menu {
+    right: unset;
+}
+
+.aqb-search-group .form-inline .ui-select-bootstrap > .ui-select-choices {
+    width: unset;
 }
