@@ -64,7 +64,7 @@
             function setSelectedSourceField() {
                 if (!!$scope.condition.sourceField && !!$scope.sourceType) {
                     $scope.selectedSourceField = _.find($scope.sourceType.sourceFields, function (field) {
-                        return field.name === $scope.condition.sourceField.name;
+                        return (field.name === $scope.condition.sourceField.name) && (field.label.toLowerCase() === $scope.condition.sourceField.label.toLowerCase());
                     });
                 }
             }

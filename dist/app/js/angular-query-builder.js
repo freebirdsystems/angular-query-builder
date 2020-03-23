@@ -1,4 +1,4 @@
-/*! angular-query-builder - v1.3.5 - 2019-08-07 */
+/*! angular-query-builder - v1.4.0 - 2020-03-23 */
 /*! https://github.com/niklr/angular-query-builder */
 angular.module('angular-query-builder', [
     'ngAnimate',
@@ -97,7 +97,7 @@ angular.module('aqb.src.directives.search-condition', [])
             function setSelectedSourceField() {
                 if (!!$scope.condition.sourceField && !!$scope.sourceType) {
                     $scope.selectedSourceField = _.find($scope.sourceType.sourceFields, function (field) {
-                        return field.name === $scope.condition.sourceField.name;
+                        return (field.name === $scope.condition.sourceField.name) && (field.label.toLowerCase() === $scope.condition.sourceField.label.toLowerCase());
                     });
                 }
             }
