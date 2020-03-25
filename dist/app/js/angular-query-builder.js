@@ -1,4 +1,4 @@
-/*! angular-query-builder - v1.4.0 - 2020-03-23 */
+/*! angular-query-builder - v1.5.0 - 2020-03-25 */
 /*! https://github.com/niklr/angular-query-builder */
 angular.module('angular-query-builder', [
     'ngAnimate',
@@ -111,6 +111,7 @@ angular.module('aqb.src.directives.search-condition', [])
                 }
 
                 if (!!$scope.selectedSourceField) {
+                    $scope.condition.readOnly = $scope.selectedSourceField.readOnly;
                     $scope.condition.sourceField = {
                         "name": $scope.selectedSourceField.name,
                         "label": $scope.selectedSourceField.label

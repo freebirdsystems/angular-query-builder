@@ -78,6 +78,7 @@
                 }
 
                 if (!!$scope.selectedSourceField) {
+                    $scope.condition.readOnly = $scope.selectedSourceField.readOnly;
                     $scope.condition.sourceField = {
                         "name": $scope.selectedSourceField.name,
                         "label": $scope.selectedSourceField.label
